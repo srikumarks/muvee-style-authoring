@@ -120,6 +120,31 @@
 (define styles (string->url "http://ekalavya.local/~kumar/musa/examples"))
 (define musa (string->url "http://muvee-style-authoring.googlecode.com/svn/trunk/examples/"))
 
+; (filter-tag-path '(html body ul li a) (list hx))
+(define (filter-tag-path tag-path tree)
+  (match tag-path
+    ['() tree]
+    [(list atag)
+     (filter (match-lambda [(list-rest t _ _) (eq? t atag)]
+                           [_ #f])
+             tree)]
+    [(cons atag child-tags)
+     (filter-tag-path child-tags (apply append (map (lambda (x) (match x 
+                                                                  [(list-rest t _ _)
+                                                                   (if (eq? t atag)
+                                                                       (rest (rest x))
+                                                                       '())]
+                                                                  [_ '()]))
+                                                    tree)))]))
+
+(define (get-attributes attr tree)
+  (apply append (map (match-lambda
+                       [(list-rest tag attrs body)
+                        (let ([a (assoc attr attrs)])
+                          (if a (rest a) '()))]
+                       [_ '()])
+                     tree)))
+
 (define (month3->number month)
   (match month
     ["Jan" 1]

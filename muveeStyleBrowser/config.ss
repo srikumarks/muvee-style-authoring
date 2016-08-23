@@ -2,17 +2,12 @@
 
 (require (only-in scheme/gui 
                   get-resource
-                  message-box)
-         (only-in xml
-                  read-xml
-                  xml->xexpr
-                  document-element))
+                  message-box))
 
 
 (provide/contract [*version* (and/c number? positive?)])
-(define *version* 1.6)
-(define *compatible-version* 1.6)
-(define *svn-version* 381)
+(define *version* 1.5)
+(define *compatible-version* 1.4)
 
 (define (find-muvee-reveal-common-files-folder default-path)
   (let ([result (box default-path)])
@@ -24,67 +19,28 @@
         (path-only (unbox result))
         (path->directory-path (string->path (unbox result))))))
   
-; (filter-tag-path '(html body ul li a) (list hx))
-(provide/contract [filter-tag-path (-> list? list? list?)])
-(define (filter-tag-path tag-path tree)
-  (match tag-path
-    ['() tree]
-    [(list atag)
-     (filter (match-lambda [(list-rest t _ _) (eq? t atag)]
-                           [_ #f])
-             tree)]
-    [(cons atag child-tags)
-     (filter-tag-path child-tags (apply append (map (lambda (x) (match x 
-                                                                  [(list-rest t _ _)
-                                                                   (if (eq? t atag)
-                                                                       (rest (rest x))
-                                                                       '())]
-                                                                  [_ '()]))
-                                                    tree)))]))
-
-(provide/contract [get-attributes (-> symbol? list? list?)])
-(define (get-attributes attr tree)
-  (apply append (map (match-lambda
-                       [(list-rest tag attrs body)
-                        (let ([a (assoc attr attrs)])
-                          (if a (rest a) '()))]
-                       [_ '()])
-                     tree)))
-
 
 (provide/contract [*install-dir* path?])
 (define *install-dir* 
-  (let* [(candidate 
-          (match (system-type 'os)
-            ['windows (find-muvee-reveal-common-files-folder "C:\\Program Files\\Common Files\\muvee Technologies\\071203\\")]
-            [_ (string->path "/tmp/installed-styles/")]))
-         (mvrt.ini (build-path candidate "MVRT.ini"))]
-    (if (file-exists? mvrt.ini)
-        ; then -> Get the styles folder from mvrt.ini
-        (let [(styles-folder
-               (first (call-with-input-string
-                       (third (first (filter-tag-path '(mvrtini enumfolders folder) 
-                                                      (list (xml->xexpr (document-element (call-with-input-file mvrt.ini read-xml)))))))
-                       port->lines)))]
-          (path->directory-path (string->path styles-folder)))
-        ; else -> Use the folder in which mvrt.dll is located.
-        candidate)))
-        
-        
+  (match (system-type 'os)
+    ['windows (find-muvee-reveal-common-files-folder "C:\\Program Files\\Common Files\\muvee Technologies\\071203\\")]
+    [_ (string->path "/tmp/installed-styles/")]))
 
 (when (not (directory-exists? *install-dir*))
   (message-box "Error" "Please install muvee Reveal first.\nhttp://www.muvee.com" #f '(ok))
   (exit))
            
-(provide/contract [*config-dir* path?])
 (define *config-dir* (let* ([pref (find-system-path 'pref-dir)])
                             (path->directory-path (build-path pref "muveeStyles"))))
                                  
 (provide/contract [*warehouse-dir* path?])
 (define *warehouse-dir* (path->directory-path (build-path *config-dir* "warehouse")))
 
+(provide/contract [*uninstall-info-file* string?])
+(define *uninstall-info-file* "uninstall-path.scm")
+
 (provide/contract [my-styles-folder path?])
-(define my-styles-folder *install-dir*)
+(define my-styles-folder (path->directory-path (build-path (find-system-path 'pref-dir) "muveeStyles" "collection")))
 
 (provide/contract [config-file (string? . -> . path?)])
 (define (config-file filename)

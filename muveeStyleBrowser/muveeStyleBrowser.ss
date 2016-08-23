@@ -1,27 +1,28 @@
 #lang scheme
 
-(require scheme/gui net/url net/sendurl file/zip 
-         "config.ss" 
-         "style.ss" 
-         "async.ss" 
-         "webdav.ss"
-         "message-centre.ss")
+(require scheme/gui net/url net/sendurl file/zip "config.ss" "style.ss" "async.ss" "webdav.ss" "message-centre.ss")
 
 (define (musa ext) (string-append "http://muvee-style-authoring.googlecode.com/" ext))
 
-(define (load-bookmarks)
-  (let ([bmfile (build-path *config-dir* "bookmarks.ss")])
-    (if (file-exists? bmfile)
-        (call-with-input-file bmfile read)
-        `(("Examples" . ,(musa "svn/trunk/examples/"))
-          ("Tutorial: Basic editing" . ,(musa "svn/trunk/tutorials/BasicEditing/"))
-          ("Tutorial: Putting a bounce into Reflections" . ,(musa "svn/trunk/tutorials/ReflectionsWithABounce/"))))))
-        
-                          
 ; Load url list for combo box from the net if available.
 ; Otherwise just construct all the URLs that we know of.
-(define *bookmarks* (load-bookmarks))
-(define *bookmarks-hash* (make-immutable-hash *bookmarks*))
+(define *special-urls*
+  (hash-set 
+   (with-handlers ([exn:fail? (lambda (e)
+                                (make-immutable-hash
+                                 `(("<Examples>" . ,(musa "svn/trunk/examples/"))
+                                   ("<Tutorial:BasicEditing>" . ,(musa "svn/trunk/tutorials/BasicEditing/")))))])
+     (make-immutable-hash
+      (hash-map (call/input-url (musa "svn/trunk/muveeStyleBrowser/std-urls.ss")
+                                get-pure-port
+                                read)
+                (lambda (k v)
+                  (cons k (musa v))))))
+   "<My styles>"
+   (path->string my-styles-folder)))
+
+; Pass on the sorted URL key list to the choice box.
+(define *choices* (sort (hash-map *special-urls* (lambda (k v) k)) string<?))
 
 ; A simple mechanism to track URL change history.
 (define *choice-history* (make-parameter '()))
@@ -47,7 +48,7 @@
 ; Either treats str as a special keyed url reference
 ; or simply returns str.
 (define (url-choice str)
-  (hash-ref *bookmarks-hash* str str))
+  (hash-ref *special-urls* str str))
 
 (define *styles-per-page* 8)
 
@@ -75,7 +76,7 @@
   (class frame%
     
     (super-new [label "muvee styles"]
-               [min-width 480]
+               [min-width 320]
                [min-height 20])
     
     (define styles '())
@@ -88,15 +89,13 @@
                  [('style:uninstalled s)
                   (status "Style [~a] successfully uninstalled." (style-id s))]
                  [('style:updated s new-s)
-                  (status "Refreshed [~a]." (style-id new-s))]
+                  (status "Synchronized [~a]." (style-id new-s))]
                  [('style:copied s new-style)
                   (status "Style [~a] successfully copied to [~a]." (style-id s) (style-id new-style))]
                  [('webdav:begin-download url local-file)
                   (status "Downloading ~a ..." (file-component local-file))]
                  [('webdav:end-download url local-file)
                   (status "Downloading ~a ... done." (file-component local-file))]
-                 [('bookmarks:fetched)
-                  (status "Bookmarks successfully fetched from muvee-style-authoring.")]
                  [('error:download-folder e url local-dir)
                   (status "Error downloading ~a" (url->string url))]
                  [('error:install-style e s)
@@ -106,9 +105,7 @@
                  [('error:copy-style e s new-id)
                   (status "Error copying style [~a] to [~a]" (style-id s) new-id)]
                  [('error:synchronize-paths refpath destpath)
-                  (status "Error synchronizing [~a] and [~a]." (path->string refpath) (path->string destpath))]
-                 [('error:bookmarks-fetch-failed e)
-                  (status "Bookmarks not fetched. Network error.")])
+                  (status "Error synchronizing [~a] and [~a]." (path->string refpath) (path->string destpath))])
     
     (define (change-style-list new-style-list)
       (if (null? new-style-list)
@@ -134,10 +131,7 @@
                                      (+ (length done) (length todo))))
                      (lambda (result)
                        (normal-status "~a styles found" (length result))
-                       (change-style-list (sort result string<? 
-                                                #:key (lambda (s)
-                                                        (style-string s 'STYLENAME 'en-US))
-                                                #:cache-keys? #t)))
+                       (change-style-list result))
                      (lambda (result)
                        (normal-status "Error")
                        (message-box "Error"
@@ -178,9 +172,7 @@
     
     (receive-for this 
                  [('style:copied s new-s)
-                  (send this process-url-entry (add-url-choice! (url->string (style-url new-s))))]
-                 [('style:deleted s)
-                  (send this process-url-entry (first (*choice-history*)))])
+                  (send this process-url-entry (add-url-choice! (url->string (style-url new-s))))])
     
     (define back-button (new button%
                              [label "Back"]
@@ -195,6 +187,17 @@
                  [('empty-url-history) (send back-button enable #f)]
                  [('new-url-history ch) (send back-button enable #t)])
     
+    (define url-field (new combo-field%
+                           [label "URL:"]
+                           [parent navigation-controls]
+                           [choices *choices*]
+                           [init-value (url-choice "<Examples>")]
+                           [callback (lambda (c e)
+                                       (when (eq? (send e get-event-type) 'text-field-enter)
+                                         (process-url-entry (add-url-choice! (url-choice (send c get-value))))))]
+                           [stretchable-width #t]
+                           [stretchable-height #f]))
+    
     (define my-styles-button
       (new button%
            [label "My styles"]
@@ -206,17 +209,6 @@
            [stretchable-width #f]
            [stretchable-height #f]))
     
-    (define url-field (new text-field%
-                           [parent navigation-controls]
-                           [label "URL:"]
-                           [init-value (url-choice "<My styles>")]
-                           [callback (lambda (c e)
-                                       (when (eq? (send e get-event-type) 'text-field-enter)
-                                         (process-url-entry (add-url-choice! (url-choice (send c get-value))))))]
-                           [stretchable-width #t]
-                           [stretchable-height #f]
-                           [horiz-margin 16]))
-        
     (define prev-button (new button% 
                              [label "<<"]
                              [callback (lambda (b e)
@@ -256,82 +248,7 @@
     
     (send this create-status-line)
     
-    (define menu-bar (new menu-bar% [parent this]))
-    (define view-menu (new menu%
-                           [parent menu-bar]
-                           [label "View"]))
-    (new menu-item% [parent view-menu]
-         [label "Refresh"]
-         [callback (lambda (c e)
-                     (unless (null? (*choice-history*))
-                       (process-url-entry (first (*choice-history*)))))]
-         [shortcut 'f5])
-    
-    
-    (define bookmarks-menu (new menu%  
-                                [parent menu-bar]
-                                [label "Bookmarks"]))
-    
-    (define (refresh-bookmarks-menu use-internet)
-      (let* ([bmfile (build-path *config-dir* "bookmarks.ss")]
-             [bms (with-handlers ([exn:fail? (lambda (e)
-                                               (broadcast 'error:bookmarks-fetch-failed e)
-                                               (load-bookmarks))])
-                    (if use-internet
-                        ; The internet bookmarks list contains only relative URLs.
-                        (begin0 (map (lambda (name-and-url)
-                                       (cons (car name-and-url)
-                                             (musa (cdr name-and-url))))
-                                     (call/input-url (string->url (musa "svn/trunk/muveeStyleBrowser/bookmarks.ss"))
-                                                     get-pure-port
-                                                     read))
-                                (broadcast 'bookmarks:fetched))
-                        (error 'no-internet-access)))])
-        (call-with-output-file bmfile (lambda (p) (write bms p)) #:exists 'replace)
-        (set! *bookmarks* bms)
-        (set! *bookmarks-hash* (make-immutable-hash *bookmarks*))
-        
-        ; Remove all bookmark menu items.
-        (for-each (lambda (m)
-                    (send m delete))
-                  (send bookmarks-menu get-items))
-        
-        ; Add the refreshed bookmarks.
-        (for-each (lambda (name-and-url)
-                    (let ([name (car name-and-url)]
-                          [url (cdr name-and-url)])
-                      (new menu-item% 
-                           [parent bookmarks-menu]
-                           [label name]
-                           [callback (lambda (c e)
-                                       (process-url-entry (add-url-choice! url)))])))
-                  *bookmarks*)
-        
-        (add-fetch-bookmarks-command)
-        
-        bms))
-
-    (define (add-fetch-bookmarks-command)
-      ; Add a separator.
-      (new separator-menu-item% [parent bookmarks-menu])
-      
-      (new menu-item%
-           [parent bookmarks-menu]
-           [label "Fetch bookmarks"]
-           [callback (lambda (c e)
-                       (refresh-bookmarks-menu #t))]))
-
-    ; Set app icons.
-    (let* [(icons-folder (build-path (path-only (find-system-path 'run-file)) "icons"))
-           (large (make-object bitmap% (build-path icons-folder "128x128.png") 'png/mask))
-           (large-mask (make-object bitmap% (build-path icons-folder "128x128a.xbm") 'xbm))
-           (small (make-object bitmap% (build-path icons-folder "16x16.png") 'png/mask))]
-      (send this set-icon large large-mask 'large)
-      (send this set-icon small (send small get-loaded-mask) 'small))
-    
-    (refresh-bookmarks-menu #f)
-        
-    (process-url-entry (add-url-choice! (path->string my-styles-folder)))
+    (process-url-entry (add-url-choice! (url-choice "<Examples>")))
     
     (send this show #t)
     ))
@@ -392,9 +309,7 @@
       (update-ui-fields))
     
     (define/override (on-subwindow-event r e)
-      ; Popup the style menu on left or right click.
-      (when (or (send e button-down? 'left) 
-                (send e button-down? 'right))
+      (when (send e button-down? 'right)
         (send this popup-menu 
               (popup-menu-for-style muvee-style) 
               (max 0 (send e get-x))
@@ -405,7 +320,42 @@
                [vert-margin 10]
                [horiz-margin 10]
                [stretchable-height #f])
-        
+    
+    (define installed?  
+      (new check-box% 
+           [parent this]
+           [label ""]
+           [value (style-installed? muvee-style)]
+           [callback (lambda (chk ev)
+                       (queue-callback (lambda ()
+                                         (dynamic-wind
+                                          (lambda () 
+                                            (send installed? enable #f))
+                                          (lambda ()
+                                            (if (style-installed? muvee-style)
+                                                ; then => uninstall it
+                                                (uninstall-style muvee-style)
+                                                (install-style (refresh-style))))
+                                          (lambda ()
+                                            (send installed? enable #t))))))]))
+    
+    ; Check box update.
+    (receive-for installed?
+                 [('style:installed s) (when (eq? s muvee-style)
+                                         (send* installed? (set-value #t) (enable #t)))]
+                 [('style:uninstalled s) (when (eq? s muvee-style)
+                                           (send* installed? (set-value #f) (enable #t)))]
+                 [('style:updated s new-s) (when (eq? new-s muvee-style)
+                                             (update-ui-fields)
+                                             (send installed? enable #t))]
+                 [('error:install-style e s) (when (eq? s muvee-style)
+                                               (send installed? enable #f))]
+                 [('error:uninstall-style e s) (when (eq? s muvee-style)
+                                                 (send installed? enable #f))]
+                 [('error:update-style e s) (when (eq? s muvee-style)
+                                              (send installed? enable #f))]
+                 )
+    
     (define icon (new message% 
                       [parent this] 
                       [label (style-icon muvee-style)]
@@ -439,15 +389,35 @@
 (define style-popup-menu%
   (class popup-menu%
     
-    (init-field the-style)
+    (define the-style #f)
     
-    (define (get-style-url)
-      (style-url the-style))
+    (define/public (set-style s)
+      (set! the-style s)
+      this)
     
-    (define (get-style-url-string)
+    (define/public (get-style) the-style)
+    
+    (define/public (get-style-url)
+      (style-url (send this get-style)))
+    
+    (define/public (get-style-url-string)
       (url->string (get-style-url)))
     
     (super-new)
+    ))
+
+(define my-style-popup-menu%
+  (class style-popup-menu%
+    
+    (define/override (get-style) (let ([s (sync-style (super get-style))])
+                                   (send this set-style s)
+                                   s))
+    
+    (super-new)
+    
+    (new menu-item% [parent this]
+         [label "Open style folder"]
+         [callback (lambda (c e) (send-url (send this get-style-url-string)))])
     
     (define (edit-file-callback filename)
       (lambda (c e)
@@ -458,159 +428,95 @@
                             #f
                             #f
                             '(caution disallow-close default=1))
-        (install-style the-style)
-        (send-url/file (path->string (build-path (style-path the-style) filename)))))
+        (let ([s (send this get-style)])
+          (send-url/file (path->string (build-path (deployed-style-path s) filename))))))
     
-    (if (style-is-local? the-style)
-        (begin 
-          (unless (style-is-mine? the-style)
-            (if (style-installed? the-style)
-                (send (new menu-item% [parent this]
-                           [label "Style is installed"]
-                           [callback (lambda (c e) void)])
-                      enable #f)
-                (new menu-item% [parent this]
-                     [label "Install"]
-                     [callback (lambda (c e)
-                                 (install-style the-style))])))
-                 
-          (new menu-item% [parent this]
-               [label "Open style folder"]
-               [callback (lambda (c e)
-                           (send-url (get-style-url-string)))])
-          
-          (new menu-item% [parent this]
-               [label "Edit data.scm"]
-               [callback (edit-file-callback "data.scm")])
-          
-          (new menu-item% [parent this]
-               [label "Edit strings.txt"]
-               [callback (edit-file-callback "strings.txt")])
-          
-          (new menu-item% [parent this]
-               [label "Derive new style ..."]
-               [callback (lambda (c e)
-                           (copy-style/gui the-style))])
-          
-          (new menu-item% [parent this]
-               [label "Zip it up ..."]
-               [callback (lambda (c e)
-                           (when (style-installed? the-style)
-                             (update-style the-style))
-                           (let* ([s the-style]
-                                  [p (url->path (style-url s))])
-                             (parameterize ([current-directory (build-path p "..")])
-                               (let ([zip-file-path (put-file #f #f #f 
-                                                              (string-append (style-id s) ".zip") 
-                                                              ".zip" 
-                                                              '() 
-                                                              '(("Zip files" "*.zip")))])
-                                 (when zip-file-path
-                                   (when (file-exists? zip-file-path) 
-                                     (delete-file zip-file-path))
-                                   (status "Creating ~a .." (file-name-from-path zip-file-path))
-                                   (dynamic-wind begin-busy-cursor
-                                                 (lambda () (zip zip-file-path (style-id s)))
-                                                 end-busy-cursor)                   
-                                   (send-url/file (path-only zip-file-path))
-                                   (status "Created ~a" (path->string (file-name-from-path zip-file-path))))))))])
-          
-          (new menu-item% [parent this]
-               [label "Refresh"]
-               [callback (lambda (c e) 
-                           (send (send this get-popup-target) 
-                                 set-muvee-style (sync-style the-style)))])
-          
-          (if (style-is-muvee-supplied? the-style)
-              (new menu-item% [parent this]
-                   [label "Delete ..."]
-                   [callback (lambda (c e)
-                               (message-box "Note" 
-                                            "Cannot delete muvee supplied styles."))])
-              (new menu-item% [parent this]
-                   [label "Delete ..."]
-                   [callback (lambda (c e)
-                               (when (= (message-box/custom 
-                                         "Warning"
-                                         "Your style cannot be recovered if you delete it! "
-                                         "Really delete style"
-                                         "Cancel"
-                                         #f
-                                         #f
-                                         '(caution default=2))
-                                        1)
-                                 (let ([path (url->path (style-url the-style))])
-                                   (when (directory-exists? path)
-                                     (delete-directory/files path)))
-                                 (broadcast 'style:deleted the-style)))])))        
-          
-        (begin 
-          (if (style-installed? the-style)
-              (send (new menu-item% [parent this]
-                         [label "Style is installed"]
-                         [callback (lambda (c e) void)])
-                    enable #f)
-              (new menu-item% [parent this]
-                   [label "Download and install"]
-                   [callback (lambda (c e)
-                               (dynamic-wind begin-busy-cursor
-                                             (lambda () (install-style the-style))
-                                             end-busy-cursor))]))
-          
-          (new menu-item% [parent this]
-               [label "Derive new style ..."]
-               [callback (lambda (c e)
-                           (copy-style/gui the-style))])
-          
-          (new menu-item% [parent this]
-               [label "Browse contents"]
-               [callback (lambda (c e) (send-url (get-style-url-string)))])
+    (new menu-item% [parent this]
+         [label "Edit data.scm"]
+         [callback (edit-file-callback "data.scm")])
     
-          (new menu-item% [parent this]
-               [label "View data.scm"]
-               [callback (lambda (c e) 
-                           (send-url (url->string (combine-url/relative (get-style-url)
-                                                                        "data.scm"))))])
-          
-          (new menu-item% [parent this]
-               [label "View strings.txt"]
-               [callback (lambda (c e) 
-                           (send-url (url->string (combine-url/relative (get-style-url)
-                                                                        "strings.txt"))))])))
+    (new menu-item% [parent this]
+         [label "Edit strings.txt"]
+         [callback (edit-file-callback "strings.txt")])
+    
+    (new menu-item% [parent this]
+         [label "Copy style (create variant) ..."]
+         [callback (lambda (c e)
+                     (copy-style/gui (send this get-style)))])
+    
+    (new menu-item% [parent this]
+         [label "Zip it up ..."]
+         [callback (lambda (c e)
+                     (let* ([s (send this get-style)]
+                            [p (url->path (style-url s))])
+                       (parameterize ([current-directory (build-path p "..")])
+                         (let ([zip-file-path (put-file #f #f #f 
+                                                        (string-append (style-id s) ".zip") 
+                                                        ".zip" 
+                                                        '() 
+                                                        '(("Zip files" "*.zip")))])
+                           (when zip-file-path
+                             (zip zip-file-path (style-id s))
+                             (send-url/file (path-only zip-file-path))
+                             (status "Created ~a" (path->string (file-name-from-path zip-file-path))))))))])
+    
+    (new menu-item% [parent this]
+         [label "Sync"]
+         [callback (lambda (c e) 
+                     (send (send this get-popup-target) 
+                           set-muvee-style (send this get-style)))])
     
     ))
 
+(define external-style-popup-menu%
+  (class style-popup-menu%
+    (super-new)
+    
+    (new menu-item% [parent this]
+         [label "Browse style contents"]
+         [callback (lambda (c e) (send-url (send this get-style-url-string)))])
+    
+    (new menu-item% [parent this]
+         [label "View data.scm"]
+         [callback (lambda (c e) 
+                     (send-url (url->string (combine-url/relative (send this get-style-url)
+                                                                  "data.scm"))))])
+    
+    (new menu-item% [parent this]
+         [label "Copy style (make editable) ..."]
+         [callback (lambda (c e)
+                     (copy-style/gui (send this get-style)))])
+    
+    (new menu-item% [parent this]
+         [label "Sync"]
+         [callback (lambda (c e) 
+                     (send (send this get-popup-target) 
+                           set-muvee-style (sync-style (send this get-style))))])
+    
+    ))
 
 (define (copy-style/gui s)
-  (let ([new-id (get-text-from-user "Style ID (Snnnnn_AlphaNumeric)" 
-                                    "Give a new style ID for your copied style."
+  (let ([new-id (get-text-from-user "Style ID" 
+                                    "Give a new style ID for your copied style" 
                                     #f 
-                                    (gen-style-id s))])
+                                    (string-append (style-id s) "_copy"))])
     (when new-id
-      (if (style-id? new-id)
-          (begin
-            (status "Copying style [~a].." (style-id s))
-            (dynamic-wind begin-busy-cursor
-                          (lambda () (copy-style s new-id))
-                          end-busy-cursor))
-          (begin
-            (message-box "Error"
-                         "Style ids can only have alpha-numeric chars in the name part."
-                         #f
-                         '(ok caution))
-            (copy-style/gui s))))))
+      (status "Copying style [~a].." (style-id s))
+      (copy-style s new-id))))
 
 (define (sync-style s)
   (status "Synchronizing [~a]..." (style-id s))
-  (dynamic-wind begin-busy-cursor
-                (lambda () (update-style s))
-                end-busy-cursor))
+  (update-style s))
 
 (define main-window (new muvee-styles-frame%))
+(define external-style-popup (new external-style-popup-menu%))
+(define my-style-popup (new my-style-popup-menu%))
 
 (define (popup-menu-for-style s)
-  (new style-popup-menu%
-       [the-style s]))
+  (send (if (equal? (url-scheme (style-url s)) "file")
+            my-style-popup
+            external-style-popup)
+        set-style s))
 
 
 

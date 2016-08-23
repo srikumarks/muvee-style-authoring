@@ -1,6 +1,6 @@
 #lang setup/infotab
 (define name "muveeStyleBrowser")
-(define version "0.1.8 alpha")
+(define version "0.1.2 alpha")
 (define blurb '("A utility to browse muvee Reveal styles published on"
                 "http://muvee-style-authoring.googlecode.com/"
                 "for copying, installation, uninstallation, etc."))

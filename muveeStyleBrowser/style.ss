@@ -1,9 +1,6 @@
 #lang scheme/gui
 
 (require net/url
-         (only-in mzlib/pregexp
-                  pregexp-match
-                  pregexp-replace)
          "message-centre.ss"
          "config.ss"
          "webdav.ss"
@@ -20,27 +17,11 @@
 (define (style-string style key lang)
   (hash-ref (hash-ref (style-strings style) lang) key))
 
-(define (change-string! table lang id proc)
-  (hash-update! table
-                lang
-                (lambda (langtable)
-                  (hash-update! langtable
-                                id
-                                proc
-                                #f)
-                  langtable)
-                make-hasheq))
-
-(provide/contract [style-id? (string? . -> . boolean?)])
-(define (style-id? str)
-  (and (regexp-match #px"^S[[:digit:]]{5}_[[:alnum:]_]+$" str)
-       #t))
-
 (provide/contract [style-url? ((or/c string? url?) . -> . boolean?)])
 (define (style-url? url)
   (if (string? url)
       (style-url? (string->url url))
-      (if (url-scheme-is-file? url)
+      (if (string=? (url-scheme url) "file")
           (style-path? (url->path url))
           (and (webdav-directory-exists? url)
                (regexp-match #px"/(S[[:digit:]]{5}_[[:alnum:]_]+)/$" (url->string url))
@@ -52,8 +33,9 @@
 
 (define (style-path? path)
   (and (directory-exists? path)
-       (style-id? (let-values ([(base name must-be-dir?) (split-path path)])
-                    (path->string name)))
+       (regexp-match #px"^S[[:digit:]]{5}_[[:alnum:]_]+$"
+                     (let-values ([(base name must-be-dir?) (split-path path)])
+                       (path->string name)))
        (let ((contents (map path->string (directory-list path))))
          (and (memf (lambda (s) (string-ci=? s "data.scm")) contents)
               (memf (lambda (s) (string-ci=? s "strings.txt")) contents)
@@ -66,7 +48,7 @@
   (with-handlers [(exn:fail? (lambda (e) '()))]
     (if (string? url)
         (fetch-styles (string->url url))
-        (if (url-scheme-is-file? url)
+        (if (string=? (url-scheme url) "file")
             ; then -> scan the given directory for style folders.
             (fetch-style-list-from-folder (url->path url))
             ; else -> read the url as a webdav directory and get style folders.
@@ -80,7 +62,7 @@
 (define (fetch-styles/async url progress-proc result-proc error-proc)
   (if (string? url)
       (fetch-styles/async (string->url url) progress-proc result-proc error-proc)
-      (if (url-scheme-is-file? url)
+      (if (string=? (url-scheme url) "file")
           ; then -> scan the given directory for style folders.
           (fetch-style-list-from-folder/async (url->path url) progress-proc result-proc error-proc)
           ; else -> read the url as a webdav directory and get style folders.
@@ -125,7 +107,7 @@
       (fetch-style-urls (if (directory-exists? (string->path url))
                             (path->url (string->path url))
                             (string->url url)))
-      (if (url-scheme-is-file? url)
+      (if (string=? (url-scheme url) "file")
           (let* ([path (url->path url)]
                  [files-and-dirs (directory-list path)]
                  [full-paths (map (lambda (f) (path->complete-path f path))
@@ -137,29 +119,24 @@
                  [only-styles (filter style-url? full-urls)])
             only-styles))))
 
+(provide/contract [style-warehouse-path (case-> (style? . -> . path?)
+                                                (string? string? . -> . path?))])
+(define style-warehouse-path
+  (case-lambda
+    [(s) (style-warehouse-path (url->string (style-url s)) (style-id s))]
+    [(url-str id) (path->directory-path (build-path *warehouse-dir* (number->string (equal-hash-code url-str)) id))]))
+
+(define (real-uninstall-path installed-path)
+  (let ([uipathfile (build-path installed-path *uninstall-info-file*)])
+    (if (file-exists? uipathfile)
+        (string->path (call-with-input-file uipathfile read))
+        #f)))
+
 (provide/contract [style-installed? (style? . -> . boolean?)])
 (define (style-installed? s)
-  (directory-exists? (style-path s)))
-
-(provide/contract [style-is-mine? (style? . -> . boolean?)])
-(define (style-is-mine? s)
-  (and (style-installed? s)
-       (url-scheme-is-file? (style-url s))
-       (string-ci=? (path->string (url->path (style-url s)))
-                    (path->string (style-path s)))))
-
-(provide/contract [style-id-number (style? . -> . exact-integer?)])
-(define (style-id-number s)
-  (string->number (second (regexp-match #px"^S([[:digit:]]{5})_[[:alnum:]_]+$" (style-id s)))))
-
-(provide/contract [style-is-muvee-supplied? (style? . -> . boolean?)])
-(define (style-is-muvee-supplied? s)
-  (and (style-is-mine? s)
-       (not (= (style-id-number s) 10000))))
-
-(provide/contract [style-is-local? (style? . -> . boolean?)])
-(define (style-is-local? s)
-  (url-scheme-is-file? (style-url s)))
+  (and (directory-exists? (style-path s))
+       (equal? (real-uninstall-path (style-path s))
+               (style-warehouse-path s))))
 
 (define (load-style-icon path max-width max-height)
   (let* ([bmp (make-object bitmap% path)]
@@ -204,19 +181,22 @@
           (let* ([url-str (url->string url)]
                  [style-id-str (second (regexp-match #px"/(S[[:digit:]]{5}_[[:alnum:]_]+)/?$" url-str))]
                  [style-install-dir (build-path *install-dir* style-id-str)]
-                 [style-prefs-dir (build-path (find-system-path 'pref-dir) "muveeStyles")])
+                 [style-prefs-dir (build-path (find-system-path 'pref-dir) "muveeStyles")]
+                 [whp (style-warehouse-path url-str style-id-str)])
             
             (make-directory* style-prefs-dir)
             
-            (let ([all-strings (load-string-table-from-file
-                                (webdav-download-file (combine-url/relative url "strings.txt")
-                                                      (build-path style-prefs-dir "strings.txt")
-                                                      #:use-cache #t))]
-                  [icon (load-style-icon (webdav-download-file (combine-url/relative url "icon.png")
-                                                               (build-path style-prefs-dir "icon.png")
-                                                               #:use-cache #t)
-                                         64 64)])
-              (make-style style-id-str url style-install-dir icon all-strings))))))
+            (if (directory-exists? whp)
+                (path->style url whp)                
+                (let ([all-strings (load-string-table-from-file
+                                    (webdav-download-file (combine-url/relative url "strings.txt")
+                                                          (build-path style-prefs-dir "strings.txt")
+                                                          #:use-cache #t))]
+                      [icon (load-style-icon (webdav-download-file (combine-url/relative url "icon.png")
+                                                                   (build-path style-prefs-dir "icon.png")
+                                                                   #:use-cache #t)
+                                             64 64)])
+                  (make-style style-id-str url style-install-dir icon all-strings)))))))
 
 (define (load-string-table-from-port port)
   (let* ([lines (port->lines port)]
@@ -241,29 +221,25 @@
       (call-with-input-file path load-string-table-from-port)
       (make-hasheq)))
 
-(define (write-string-table-to-file table path)
-  (call-with-output-file path
-    (lambda (p)
-      (hash-for-each table 
-                     (lambda (langcode langtable)
-                       (hash-for-each langtable 
-                                      (lambda (id text)
-                                        (display (format "~a\t~a\t~a\n" id langcode text) p)))
-                       (display "\n\n" p))))))
-
 (provide/contract [install-style (style? . -> . any)])
 (define (install-style s)
   (with-handlers [(exn:fail? (lambda (e)
                                (broadcast 'error:install-style e s)
                                #f))]
+;                               (message-box "Error" 
+;                                            (format "Failed to install style [~a]!\n\nDetails:\n~a" (style-id s) e)
+;                                            #f
+;                                            '(ok caution))
     (cond
-      [(style-is-local? s)
-       (synchronize-paths (url->path (style-url s)) (style-path s))
+      [(style-installed? s) #t]
+      [(directory-exists? (style-warehouse-path s))
+       (when (directory-exists? (style-path s))
+         (uninstall-unknown-style (style-path s)))
+       (rename-file-or-directory (style-warehouse-path s) (style-path s))
        (broadcast 'style:installed s)
        #t]
-      [#t (webdav-download-folder (style-url s) (style-path s))
-          (broadcast 'style:installed s)
-          #t])))
+      [#t (webdav-download-folder (style-url s) (style-warehouse-path s))
+          (install-style s)])))
 
 (define (ensure-parent-path-exists p)
   (let ([p-parent (simplify-path (build-path p 'up) #f)])
@@ -271,6 +247,30 @@
       (make-directory* p-parent)))
   p)
 
+(provide/contract [uninstall-style (style? . -> . any)])
+(define (uninstall-style s)
+  (if (style-installed? s)
+      (begin (rename-file-or-directory (style-path s) (ensure-parent-path-exists (style-warehouse-path s)))
+             (broadcast 'style:uninstalled s)
+             #t)
+      #f))
+
+(define (uninstall-unknown-style path-to-installed-style)
+  (if (string? path-to-installed-style)
+      (uninstall-unknown-style (path->directory-path (string->path path-to-installed-style)))
+      (let ([uipathfile (build-path path-to-installed-style *uninstall-info-file*)])
+        (if (file-exists? uipathfile)
+            (let ([uipath (string->path (call-with-input-file uipathfile read))])
+              (rename-file-or-directory path-to-installed-style (ensure-parent-path-exists uipath)))
+            (begin
+              (when (eq? 'yes 
+                         (message-box "Warning" 
+                                      (format "Delete style directory [~a]?" (path->string path-to-installed-style))
+                                      #f
+                                      '(yes-no caution)))
+                (delete-directory/files path-to-installed-style)))))))
+                                 
+                                 
 (define (dir-modify-seconds dir)
   (if (directory-exists? dir)
       (file-or-directory-modify-seconds dir)
@@ -281,17 +281,27 @@
   (with-handlers [(exn:fail? (lambda (e) 
                                (broadcast 'error:update-style e s)
                                s))]
-    (let* ([dep (style-path s)])
-      (if (url-scheme-is-file? (style-url s))
+;                               (message-box "Error" 
+;                                            (format "Failed to update style [~a].\n\nDetails:\n~a" (style-id s) e)
+;                                            #f
+;                                            '(ok caution))
+    (let* ([dep (deployed-style-path s)]
+           [create-uninstall-file (lambda () 
+                                    (call-with-output-file (build-path dep *uninstall-info-file*)
+                                      (lambda (p) (write (path->string (style-warehouse-path s)) p))
+                                      #:exists 'replace))])
+      (if (string=? (url-scheme (style-url s)) "file")
           ; then => copy file tree.
           (if (directory-exists? dep)
               (synchronize-paths (url->path (style-url s)) dep)
               (begin (make-directory* (simplify-path (build-path dep 'up) #f))
-                     (copy-directory/files (url->path (style-url s)) dep)))
+                     (copy-directory/files (url->path (style-url s)) dep)
+                     (create-uninstall-file)))
           ; else => download from webdav.
           (if (> (webdav-style-modify-seconds s)
                  (dir-modify-seconds dep))
-              (webdav-download-folder (style-url s) dep)
+              (begin (webdav-download-folder (style-url s) dep)
+                     (create-uninstall-file))
               s)))
     (let ([new-s (url->style (style-url s))])
       (broadcast 'style:updated s new-s)
@@ -305,41 +315,32 @@
          (webdav-resource-modify-seconds ud)
          (webdav-resource-modify-seconds us))))
     
-; Generate a locally unique style id for a copy of the given style.
-(provide/contract [gen-style-id (style? . -> . string?)])
-(define (gen-style-id s)
-  ; 1. Discard any deployment number that the style has and use 10000 for the copy.
-  ; 2. Append copyN, trying successive N until one style with that name doesn't exist.
-  (let* [(idcopy (string-append (pregexp-replace #px"^S[0-9]{5}_" (style-id s) "S10000_") "_copy"))
-         (expected-path (build-path my-styles-folder idcopy))]
-    (if (directory-exists? expected-path)
-        (let loop ([i 2] [base (path->string expected-path)])
-          (if (directory-exists? (string-append base (number->string i)))
-              (loop (+ i 1) base) ; Try the next number.
-              (string-append idcopy (number->string i))))
-        idcopy)))
-  
+(provide/contract [deployed-style-path (style? . -> . path?)])
+(define (deployed-style-path s)
+  (if (style-installed? s)
+      (style-path s)
+      (style-warehouse-path s)))
+
 (provide/contract [copy-style (style? string? . -> . any)])
 (define (copy-style s new-id)
-  (with-handlers ([exn:fail? (lambda (e)
-                               (display e)
-                               (broadcast 'error:copy-style e s new-id)
-                               #f)])
-    (let* ([dest-path (path->directory-path (build-path my-styles-folder new-id))]
-           [on-copy (lambda ()
-                      (let ([new-style (path->style dest-path)])
-                        (broadcast 'style:copied s new-style)
-                        new-style))])
-      (if (style-is-local? s)
-          (begin 
-            (update-style s)
-            (if (directory-exists? dest-path)
-                #f
-                (begin (copy-directory/files (style-path s) dest-path)
-                       (on-copy))))
-          (begin
-            (webdav-download-folder (style-url s) dest-path)
-            (on-copy))))))
+  (if (style-installed? s)
+      (dynamic-wind (lambda () (uninstall-style s))
+                    (lambda () (copy-style s new-id))
+                    (lambda () (install-style s)))
+      (with-handlers ([exn:fail? (lambda (e)
+                                   (broadcast 'error:copy-style e s new-id)
+                                   #f)])
+        (let ([dest-path (path->directory-path (build-path my-styles-folder new-id))])
+          (update-style s)
+          (if (directory-exists? dest-path)
+              #f
+              (begin (copy-directory/files (style-warehouse-path s) dest-path)
+                     (let ([uiinfo (build-path dest-path *uninstall-info-file*)])
+                       (when (file-exists? uiinfo)
+                         (delete-file uiinfo)))
+                     (let ([new-style (path->style dest-path)])
+                       (broadcast 'style:copied s new-style)
+                       new-style)))))))
               
 
 (provide/contract [synchronize-paths (path? path? . -> . void)])
@@ -372,5 +373,3 @@
           (copy-port in out))
         #:exists 'replace))))
           
-(define (url-scheme-is-file? url)
-  (string=? (url-scheme url) "file"))

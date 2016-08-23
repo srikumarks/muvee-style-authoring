@@ -1,0 +1,34 @@
+STYLEDESC	da-DA	Tilbagelænet stil og overgange i roligt tempo lader dig nyde dine videoøjeblikke i afslappet stil. Passer bedst til langsom vokal-musik.
+STYLEDESC	de-DE	Ruhige Vorlage mit gemäßigt gesteuerten Übergängen für den entspannten Genuss Ihres Videos. Am besten geeignet für langsame Gesangsstücke.
+STYLEDESC	en-US	Leisurely style and moderately-paced transitions let you enjoy your video moments in total relaxation. Works best with slow, vocal music.
+STYLEDESC	es-ES	Estilo pausado y transiciones de ritmo moderado que le permiten disfrutar de sus momentos de vídeo con total relajación. Funciona bien con música vocal lenta.
+STYLEDESC	fi-FI	Rento tyyli ja keskinopeat siirtymät, joiden avulla voit nauttia videohetkistä täysin rauhassa. Toimii parhaiten hitaan, vokaalimusiikin kanssa.
+STYLEDESC	fr-FR	Un style décontracté et des transitions moyennement rapides vous permettent de profiter de vos moments vidéo en totale relaxation. S'adapte particulièrement bien à la musique lente, vocale.
+STYLEDESC	it-IT	Stile lento e passaggi a passo moderato permettono di godere i momenti video in rilassamento totale. Funziona meglio con la musica lenta, vocale.
+STYLEDESC	ja-JP	静止画像を多く素材に使ったときに選ぶと良いスタイルです。静止画像をクローズアップで見せながらゆっくりと移動するカメラが効果的。ページをめくるようなトランジションも利いています。
+STYLEDESC	ko-KR	느긋하고 편안한 상태에서 비디오의 장면 장면을 즐길 수 있게 하는 여유로운 보통 속도의 트랜지션. 느린 성악곡과 잘 어울림.
+STYLEDESC	nl-NL	Kalme stijl met rustige overgangen, zodat u in alle rust van uw videomomenten kunt genieten. Past goed bij trage zang.
+STYLEDESC	no-NO	Avslappet stil med overganger i moderat tempo, lar deg nyte dine videopassasjer i fred og ro.  Fungerer best med langsom, vokalmusikk.
+STYLEDESC	pt-PT	Estilo relaxante e transições moderadas que permitem desfrutrar de momentos de vídeo num relaxamento total. Funciona melhor com música vocal, lenta.
+STYLEDESC	pt-BR	Estilo calmo e transições em ritmo moderado para usufruir de seus momentos junto ao vídeo em total relaxamento. Funciona melhor com música vocal lenta.
+STYLEDESC	ru-RU	Медленные и умеренные переходы позволяют полностью расслабиться, созерцая видеозапись. Больше всего подходит к медленному вокалу.
+STYLEDESC	sv-SE	Ledig stil i medelmåttiga tempoövergångar, låter dig njuta av dina videoögonblick i total avkoppling. Fungerar bäst tillsammans med långsam, vokalmusik.
+STYLEDESC	zh-CN	悠闲风格和中节奏转接让您在完全放松之下尽情欣赏影片。最适合与慢节奏声乐搭配。
+STYLEDESC	zh-TW	悠閒風格和中節奏轉接讓您在完全放鬆之下盡情欣賞影片。最適合與慢節奏聲樂搭配。
+STYLENAME	da-DA	Træk vejret
+STYLENAME	de-DE	Breathe
+STYLENAME	en-US	Breathe
+STYLENAME	es-ES	Respirar
+STYLENAME	fi-FI	Henkäys
+STYLENAME	fr-FR	Relaxation
+STYLENAME	it-IT	Respirare
+STYLENAME	ja-JP	クローズアップ・フォトブック
+STYLENAME	ko-KR	휴식
+STYLENAME	nl-NL	Ademen
+STYLENAME	no-NO	Pust
+STYLENAME	pt-PT	Relaxar
+STYLENAME	pt-BR	Relaxamento
+STYLENAME	ru-RU	Шепот
+STYLENAME	sv-SE	Andas ut
+STYLENAME	zh-CN	清风徐徐
+STYLENAME	zh-TW	清風徐徐
