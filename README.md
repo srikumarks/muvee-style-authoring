@@ -1,6 +1,6 @@
 # muvee-style-authoring
 
-Info about authoring [muvee Reveal styles](http://www.muvee.com). Exported from googlecode.
+Info about authoring [muvee Reveal styles](http://www.muvee.com/products/muvee-reveal-12/). Exported from googlecode.
 
 To read docs about style authoring, visit https://srikumarks.github.io/muvee-style-authoring
 
