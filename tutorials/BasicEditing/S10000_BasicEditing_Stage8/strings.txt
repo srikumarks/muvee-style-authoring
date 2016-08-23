@@ -1,0 +1,9 @@
+﻿STYLEDESC	en-US	STAGE 8: Some polish. 
+STYLENAME	en-US	Basic editing tutorial (8 of 8)
+PACE	en-US	Pace
+PACE_MIN	en-US	Slow
+PACE_MAX	en-US	Fast
+MUSIC_RESPONSE	en-US	Music response
+MUSIC_RESPONSE_MIN	en-US	Inverse
+MUSIC_RESPONSE_MAX	en-US	Normal
+

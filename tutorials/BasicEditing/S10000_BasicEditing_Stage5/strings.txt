@@ -1,0 +1,3 @@
+﻿STYLEDESC	en-US	STAGE 5: Adding transitions.
+STYLENAME	en-US	Basic editing tutorial (5 of 8)
+

@@ -1,0 +1,16 @@
+STYLENAME	en-US	Showcase [code only]
+STYLEDESC	en-US	Classic simplicity.
+AVERAGE_SPEED	en-US	Pace
+AVERAGE_SPEED_MIN	en-US	Slow
+AVERAGE_SPEED_MAX	en-US	Fast
+BORDER_COLOR	en-US	Border color
+BACKGROUND_COLOR	en-US	Background color
+FILM_COLOR	en-US	Film color
+Color	en-US	Normal
+BW	en-US	Black & white
+Sepia	en-US	Sepia
+Saturated	en-US	Saturated
+Desaturated	en-US	Desaturated
+TRANSITIONS	en-US	Transitions
+Dissolves	en-US	Dissolves
+Fades	en-US	Fades

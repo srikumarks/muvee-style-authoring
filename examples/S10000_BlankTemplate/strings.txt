@@ -1,0 +1,3 @@
+﻿STYLEDESC	en-US	Use this style as a template for creating your own.
+STYLENAME	en-US	Blank template
+

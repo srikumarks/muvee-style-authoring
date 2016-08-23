@@ -1,0 +1,11 @@
+STYLENAME	en-US	Uncle Oscar [code only]
+STYLEDESC	en-US	Lights! Camera! Action!
+AVERAGE_SPEED	en-US	Pace
+AVERAGE_SPEED_MIN	en-US	Slow
+AVERAGE_SPEED_MAX	en-US	Fast
+FILM_TYPE	en-US	Film type
+Standard	en-US	Standard
+Grunge	en-US	Grunge
+DIRECTION	en-US	Film roll direction
+Horiz	en-US	Horizontal
+Vert	en-US	Vertical

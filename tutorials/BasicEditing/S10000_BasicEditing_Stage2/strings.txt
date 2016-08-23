@@ -1,0 +1,3 @@
+﻿STYLEDESC	en-US	STAGE 2: Playing around with editing pace.
+STYLENAME	en-US	Basic editing tutorial (2 of 8)
+

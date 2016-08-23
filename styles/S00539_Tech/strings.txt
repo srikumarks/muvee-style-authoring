@@ -1,0 +1,17 @@
+STYLENAME	en-US	Techno Buzz [code only]
+STYLEDESC	en-US	Transmission interrupted.
+AVERAGE_SPEED	en-US	Pace
+AVERAGE_SPEED_MIN	en-US	Slow
+AVERAGE_SPEED_MAX	en-US	Fast
+MUSIC_RESPONSE	en-US	Response to music
+MUSIC_RESPONSE_MIN	en-US	Less
+MUSIC_RESPONSE_MAX	en-US	More
+FILM_COLOR	en-US	Film color
+Color	en-US	Normal
+BW	en-US	Black & white
+Bleached	en-US	Semi-bleached
+Embers	en-US	Burning embers
+GLITCH_FREQ	en-US	Glitches
+GLITCH_FREQ_MIN	en-US	None
+GLITCH_FREQ_MAX	en-US	Many
+TV_SCAN_LINES	en-US	Television scan lines

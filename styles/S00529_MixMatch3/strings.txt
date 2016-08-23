@@ -1,0 +1,12 @@
+STYLENAME	en-US	Industrial [code only]
+STYLEDESC	en-US	Play with the alternative.
+AVERAGE_SPEED	en-US	Pace
+AVERAGE_SPEED_MIN	en-US	Slow
+AVERAGE_SPEED_MAX	en-US	Fast
+DIRECTION	en-US	Slide direction
+Both	en-US	Horizontal and vertical
+Horiz	en-US	Horizontal only
+Vert	en-US	Vertical only
+OVERLAYS	en-US	Stuck on with...
+Overlays1	en-US	Bolts
+Overlays2	en-US	Duct tape

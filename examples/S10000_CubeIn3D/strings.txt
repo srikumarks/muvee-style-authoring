@@ -1,0 +1,23 @@
+﻿STYLENAME	en-US	Cube Twist in 3D
+STYLEDESC	en-US	Wear red-cyan 3D glasses to view this one.
+
+AVERAGE_SPEED	en-US	Pace
+AVERAGE_SPEED_MIN	en-US	Slow
+AVERAGE_SPEED_MAX	en-US	Fast
+
+BEAT_RESPONSE	en-US	Beat response
+BEAT_RESPONSE_MIN	en-US	None
+BEAT_RESPONSE_MAX	en-US	Strong
+
+BOUNCINESS	en-US	Bounciness
+BOUNCINESS_MIN	en-US	None
+BOUNCINESS_MAX	en-US	Lots
+
+HOVER	en-US	Hover
+HOVER_MIN	en-US	None
+HOVER_MAX	en-US	More
+
+THEME	en-US	Background theme
+None	en-US	None
+ThemeA	en-US	Sonar
+ThemeB	en-US	Eclipse

@@ -1,0 +1,2 @@
+﻿STYLENAME	en-US	Visual Music Descriptor
+STYLEDESC	en-US	This is a test style that allows you to see the music descriptors.

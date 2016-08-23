@@ -1,0 +1,3 @@
+﻿STYLEDESC	en-US	Shows how to load a graphic and show it atop the user's material.
+STYLENAME	en-US	Image Overlay
+

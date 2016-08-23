@@ -1,0 +1,13 @@
+STYLENAME	en-US	Grunge [code only]
+STYLEDESC	en-US	Make your photos appear and disappear. If only you could control your kids like this.
+AVERAGE_SPEED	en-US	Pace
+AVERAGE_SPEED_MIN	en-US	Slow
+AVERAGE_SPEED_MAX	en-US	Fast
+DIRECTION	en-US	Bounce direction
+Both	en-US	Horizontal and vertical
+Horiz	en-US	Horizontal only
+Vert	en-US	Vertical only
+BORDER	en-US	Border color
+Black	en-US	Black
+White	en-US	White
+None	en-US	No border

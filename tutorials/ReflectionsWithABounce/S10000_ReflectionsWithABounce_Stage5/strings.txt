@@ -1,0 +1,17 @@
+﻿STYLENAME	en-US	Reflections with a bounce (5 of 6)
+STYLEDESC	en-US	STAGE 5: Selecting better bounce points.
+
+AVERAGE_SPEED	en-US	Flying speed
+AVERAGE_SPEED_MIN	en-US	Slow
+AVERAGE_SPEED_MAX	en-US	Fast
+
+ORNAMENTS	en-US	Ornaments
+Stars	en-US	Stars
+Circles	en-US	Circles
+Squares	en-US	Squares
+All	en-US	All of the above
+None	en-US	None
+
+REFLECTIVITY	en-US	Reflectivity
+REFLECTIVITY_MIN	en-US	None
+REFLECTIVITY_MAX	en-US	More

@@ -1,0 +1,3 @@
+﻿STYLEDESC	en-US	STAGE 1: Starting from the S10000_BlankTemplate style.
+STYLENAME	en-US	Basic editing tutorial (1 of 8)
+

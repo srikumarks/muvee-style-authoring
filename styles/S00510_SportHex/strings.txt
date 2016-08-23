@@ -1,0 +1,215 @@
+﻿STYLENAME	de-DE	Hexplosion
+STYLENAME	en-US	Hexplode
+STYLENAME	es-ES	Gran explosión
+STYLENAME	fr-FR	Explosif
+STYLENAME	it-IT	Esplosivo
+STYLENAME	ja-JP	ヘキサゴンエクスプロージョン
+STYLENAME	ko-KR	헥스플로드
+STYLENAME	nl-NL	Hexaflitsend
+STYLENAME	pt-BR	Explosivo
+STYLENAME	pt-PT	Hexplosivo
+STYLENAME	ru-RU	Взрывай
+STYLENAME	sv-SE	Hexplodera
+STYLENAME	zh-CN	劲爆
+STYLENAME	zh-TW	勁爆
+STYLEDESC	de-DE	Geben Sie Ihren Sportvideos den letzten Pfiff.
+STYLEDESC	en-US	Give your sports video a kick.
+STYLEDESC	es-ES	Dele un puntapié al vídeo de deporte.
+STYLEDESC	fr-FR	Donnez du punch à vos clips de sport.
+STYLEDESC	it-IT	Più energia ai filmati sportivi!
+STYLEDESC	ja-JP	スリル満点のスポーツビデオを作成しましょう。
+STYLEDESC	ko-KR	스포츠 비디오를 더욱 생동감 넘치게 만들 수 있습니다.
+STYLEDESC	nl-NL	Geef uw sportvideo een impuls.
+STYLEDESC	pt-BR	Dê mais emoção ao seu vídeo de esportes.
+STYLEDESC	pt-PT	Dê um novo impulso aos seus vídeos de desporto.
+STYLEDESC	ru-RU	Заткните за пояс спортивное видео.
+STYLEDESC	sv-SE	Ge din sportfilm en kick.
+STYLEDESC	zh-CN	让您的体育视频更加动人。
+STYLEDESC	zh-TW	讓您的運動視訊動感十足。
+
+AVERAGE_SPEED	de-DE	Schnittrate
+AVERAGE_SPEED	en-US	Cutting rate
+AVERAGE_SPEED	es-ES	Velocidad de corte
+AVERAGE_SPEED	fr-FR	Taux de coupure
+AVERAGE_SPEED	it-IT	Velocità di taglio
+AVERAGE_SPEED	ja-JP	カット速度
+AVERAGE_SPEED	ko-KR	잘라내기 속도
+AVERAGE_SPEED	nl-NL	Overgangssnelheid
+AVERAGE_SPEED	pt-BR	Taxa de corte
+AVERAGE_SPEED	pt-PT	Velocidade
+AVERAGE_SPEED	ru-RU	Скорость чередования сцен при монтаже
+AVERAGE_SPEED	sv-SE	Klipphastighet
+AVERAGE_SPEED	zh-CN	剪切速度
+AVERAGE_SPEED	zh-TW	剪接率
+AVERAGE_SPEED_MIN	de-DE	Langsam
+AVERAGE_SPEED_MIN	en-US	Slow
+AVERAGE_SPEED_MIN	es-ES	Lenta
+AVERAGE_SPEED_MIN	fr-FR	Lente
+AVERAGE_SPEED_MIN	it-IT	Bassa
+AVERAGE_SPEED_MIN	ja-JP	遅い
+AVERAGE_SPEED_MIN	ko-KR	느림
+AVERAGE_SPEED_MIN	nl-NL	Langzaam
+AVERAGE_SPEED_MIN	pt-BR	Lenta
+AVERAGE_SPEED_MIN	pt-PT	Lenta
+AVERAGE_SPEED_MIN	ru-RU	Низкая
+AVERAGE_SPEED_MIN	sv-SE	Långsam
+AVERAGE_SPEED_MIN	zh-CN	慢
+AVERAGE_SPEED_MIN	zh-TW	緩慢
+AVERAGE_SPEED_MAX	de-DE	Schnell
+AVERAGE_SPEED_MAX	en-US	Fast
+AVERAGE_SPEED_MAX	es-ES	Rápida
+AVERAGE_SPEED_MAX	fr-FR	Rapide
+AVERAGE_SPEED_MAX	it-IT	Alta
+AVERAGE_SPEED_MAX	ja-JP	速い
+AVERAGE_SPEED_MAX	ko-KR	빠름
+AVERAGE_SPEED_MAX	nl-NL	Snel
+AVERAGE_SPEED_MAX	pt-BR	Rápida
+AVERAGE_SPEED_MAX	pt-PT	Rápida
+AVERAGE_SPEED_MAX	ru-RU	Высокая
+AVERAGE_SPEED_MAX	sv-SE	Snabb
+AVERAGE_SPEED_MAX	zh-CN	快
+AVERAGE_SPEED_MAX	zh-TW	快速
+
+MUSIC_RESPONSE	de-DE	Der Musik entsprechend
+MUSIC_RESPONSE	en-US	Response to music
+MUSIC_RESPONSE	es-ES	Respuesta a la música
+MUSIC_RESPONSE	fr-FR	Réponse à la musique
+MUSIC_RESPONSE	it-IT	Risposta alla musica
+MUSIC_RESPONSE	ja-JP	音楽とのマッチ
+MUSIC_RESPONSE	ko-KR	음악에 맞게
+MUSIC_RESPONSE	nl-NL	Reactie op muziek
+MUSIC_RESPONSE	pt-BR	Resposta para música
+MUSIC_RESPONSE	pt-PT	Resposta à música
+MUSIC_RESPONSE	ru-RU	Синхронизация с музыкой
+MUSIC_RESPONSE	sv-SE	Respons på musik
+MUSIC_RESPONSE	zh-CN	对音乐的响应
+MUSIC_RESPONSE	zh-TW	回應音樂
+MUSIC_RESPONSE_MIN	de-DE	Weniger
+MUSIC_RESPONSE_MIN	en-US	Less
+MUSIC_RESPONSE_MIN	es-ES	Menos
+MUSIC_RESPONSE_MIN	fr-FR	Moins
+MUSIC_RESPONSE_MIN	it-IT	Meno
+MUSIC_RESPONSE_MIN	ja-JP	少ない
+MUSIC_RESPONSE_MIN	ko-KR	적음
+MUSIC_RESPONSE_MIN	nl-NL	Minder
+MUSIC_RESPONSE_MIN	pt-BR	Menos
+MUSIC_RESPONSE_MIN	pt-PT	Menos
+MUSIC_RESPONSE_MIN	ru-RU	Меньше
+MUSIC_RESPONSE_MIN	sv-SE	Mindre
+MUSIC_RESPONSE_MIN	zh-CN	较少
+MUSIC_RESPONSE_MIN	zh-TW	較少
+MUSIC_RESPONSE_MAX	de-DE	Mehr
+MUSIC_RESPONSE_MAX	en-US	More
+MUSIC_RESPONSE_MAX	es-ES	Más
+MUSIC_RESPONSE_MAX	fr-FR	Plus
+MUSIC_RESPONSE_MAX	it-IT	Più
+MUSIC_RESPONSE_MAX	ja-JP	多い
+MUSIC_RESPONSE_MAX	ko-KR	많음
+MUSIC_RESPONSE_MAX	nl-NL	Meer
+MUSIC_RESPONSE_MAX	pt-BR	Mais
+MUSIC_RESPONSE_MAX	pt-PT	Mais
+MUSIC_RESPONSE_MAX	ru-RU	Больше
+MUSIC_RESPONSE_MAX	sv-SE	Fler
+MUSIC_RESPONSE_MAX	zh-CN	较多
+MUSIC_RESPONSE_MAX	zh-TW	較多
+
+HEX_SIZE	de-DE	Größe der Bruchstücke
+HEX_SIZE	en-US	Size of shattered pieces
+HEX_SIZE	es-ES	Tamaño de los fragmentos estallados
+HEX_SIZE	fr-FR	Taille des fragments
+HEX_SIZE	it-IT	Dimensione dei frammenti
+HEX_SIZE	ja-JP	ヘキサゴンのサイズ
+HEX_SIZE	ko-KR	산산히 부서진 조각 크기
+HEX_SIZE	nl-NL	Grootte van de splinters
+HEX_SIZE	pt-BR	Tamanho das peças fragmentadas
+HEX_SIZE	pt-PT	Tamanho dos destroços
+HEX_SIZE	ru-RU	Размер разбитых фрагментов
+HEX_SIZE	sv-SE	Storlek på krossade bitar
+HEX_SIZE	zh-CN	碎片大小
+HEX_SIZE	zh-TW	碎片大小
+HEX_SIZE_MIN	de-DE	Kleiner
+HEX_SIZE_MIN	en-US	Smaller
+HEX_SIZE_MIN	es-ES	Más pequeño
+HEX_SIZE_MIN	fr-FR	Plus petit
+HEX_SIZE_MIN	it-IT	Più piccoli
+HEX_SIZE_MIN	ja-JP	小さい
+HEX_SIZE_MIN	ko-KR	더 작음
+HEX_SIZE_MIN	nl-NL	Kleiner
+HEX_SIZE_MIN	pt-BR	Menor
+HEX_SIZE_MIN	pt-PT	Menores
+HEX_SIZE_MIN	ru-RU	Меньше
+HEX_SIZE_MIN	sv-SE	Mindre
+HEX_SIZE_MIN	zh-CN	较小
+HEX_SIZE_MIN	zh-TW	較小
+HEX_SIZE_MAX	de-DE	Größer
+HEX_SIZE_MAX	en-US	Bigger
+HEX_SIZE_MAX	es-ES	Más grande
+HEX_SIZE_MAX	fr-FR	Plus grand
+HEX_SIZE_MAX	it-IT	Più grandi
+HEX_SIZE_MAX	ja-JP	大きい
+HEX_SIZE_MAX	ko-KR	더 큼
+HEX_SIZE_MAX	nl-NL	Groter
+HEX_SIZE_MAX	pt-BR	Maior
+HEX_SIZE_MAX	pt-PT	Maiores
+HEX_SIZE_MAX	ru-RU	Больше
+HEX_SIZE_MAX	sv-SE	Större
+HEX_SIZE_MAX	zh-CN	较大
+HEX_SIZE_MAX	zh-TW	較大
+
+HEX_OVERLAYS	de-DE	Schnelle sechseckige Überlagerungen
+HEX_OVERLAYS	en-US	Fast hexagonal overlays
+HEX_OVERLAYS	es-ES	Superposiciones hexagonales rápidas
+HEX_OVERLAYS	fr-FR	Superpositions hexagonales rapides
+HEX_OVERLAYS	it-IT	Sovrapposizioni esagonali veloci
+HEX_OVERLAYS	ja-JP	ヘキサゴンの高速オーバーレイ
+HEX_OVERLAYS	ko-KR	빠른 6각형 오버레이
+HEX_OVERLAYS	nl-NL	Snelle zeshoekige overlays
+HEX_OVERLAYS	pt-BR	Sobreposições hexagonais rápidas
+HEX_OVERLAYS	pt-PT	Sobreposições hexagonais rápidas
+HEX_OVERLAYS	ru-RU	Быстрые шестиугольные наложения
+HEX_OVERLAYS	sv-SE	Snabba hexagonala överdrag
+HEX_OVERLAYS	zh-CN	快速六边形重叠
+HEX_OVERLAYS	zh-TW	快速六角形外罩
+HEX_OVERLAYS_MIN	de-DE	Keine
+HEX_OVERLAYS_MIN	en-US	None
+HEX_OVERLAYS_MIN	es-ES	Ninguna
+HEX_OVERLAYS_MIN	fr-FR	Aucun
+HEX_OVERLAYS_MIN	it-IT	Nessuna
+HEX_OVERLAYS_MIN	ja-JP	なし
+HEX_OVERLAYS_MIN	ko-KR	없음
+HEX_OVERLAYS_MIN	nl-NL	Geen
+HEX_OVERLAYS_MIN	pt-BR	Nenhum
+HEX_OVERLAYS_MIN	pt-PT	Nenhuma
+HEX_OVERLAYS_MIN	ru-RU	Нет
+HEX_OVERLAYS_MIN	sv-SE	Ingen
+HEX_OVERLAYS_MIN	zh-CN	无
+HEX_OVERLAYS_MIN	zh-TW	無
+HEX_OVERLAYS_MAX	de-DE	Viele
+HEX_OVERLAYS_MAX	en-US	Many
+HEX_OVERLAYS_MAX	es-ES	Muchas
+HEX_OVERLAYS_MAX	fr-FR	Plusieurs
+HEX_OVERLAYS_MAX	it-IT	Molte
+HEX_OVERLAYS_MAX	ja-JP	多い
+HEX_OVERLAYS_MAX	ko-KR	많음
+HEX_OVERLAYS_MAX	nl-NL	Veel
+HEX_OVERLAYS_MAX	pt-BR	Muitas
+HEX_OVERLAYS_MAX	pt-PT	Muitas
+HEX_OVERLAYS_MAX	ru-RU	Много
+HEX_OVERLAYS_MAX	sv-SE	Många
+HEX_OVERLAYS_MAX	zh-CN	很多
+HEX_OVERLAYS_MAX	zh-TW	許多
+
+TV_SCAN_LINES	de-DE	Fernsehlinien
+TV_SCAN_LINES	en-US	Television scan lines
+TV_SCAN_LINES	es-ES	Líneas de exploración de televisión
+TV_SCAN_LINES	fr-FR	Lignes de balayage télévision
+TV_SCAN_LINES	it-IT	Linee di scansione televisiva
+TV_SCAN_LINES	ja-JP	テレビの走査線
+TV_SCAN_LINES	ko-KR	TV 주사선
+TV_SCAN_LINES	nl-NL	Televisie'-strepen
+TV_SCAN_LINES	pt-BR	Linhas de varredura da televisão
+TV_SCAN_LINES	pt-PT	Linhas de varrimento de televisor
+TV_SCAN_LINES	ru-RU	Строки телевизионной развертки
+TV_SCAN_LINES	sv-SE	TV-sveplinjer
+TV_SCAN_LINES	zh-CN	电视扫描线
+TV_SCAN_LINES	zh-TW	電視掃描線

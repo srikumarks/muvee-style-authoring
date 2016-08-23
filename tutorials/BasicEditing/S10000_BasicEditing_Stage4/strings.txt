@@ -1,0 +1,3 @@
+﻿STYLEDESC	en-US	STAGE 4: Making the editing pattern respond to music.
+STYLENAME	en-US	Basic editing tutorial (4 of 8)
+

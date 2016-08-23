@@ -1,0 +1,3 @@
+﻿STYLEDESC	en-US	Turns captions on photos into images using Google image search.
+STYLENAME	en-US	Image Search
+

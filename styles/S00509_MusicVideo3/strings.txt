@@ -1,0 +1,11 @@
+STYLENAME	en-US	Pump It Up! [code only]
+STYLEDESC	en-US	Pick a fast song. Put your aerobics instructor to shame.
+ENERGY_LEVEL	en-US	Energy level
+ENERGY_LEVEL_MIN	en-US	Sedate
+ENERGY_LEVEL_MAX	en-US	Energetic
+AVERAGE_SPEED	en-US	Cutting rate
+AVERAGE_SPEED_MIN	en-US	Slow
+AVERAGE_SPEED_MAX	en-US	Fast
+MUSIC_RESPONSE	en-US	Response to music
+MUSIC_RESPONSE_MIN	en-US	Less
+MUSIC_RESPONSE_MAX	en-US	More

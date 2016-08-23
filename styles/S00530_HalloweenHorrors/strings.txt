@@ -1,0 +1,14 @@
+﻿STYLENAME	en-US	Halloween Horrors
+STYLEDESC	en-US	Showcase a variety of tricks and treats.
+
+AVERAGE_SPEED	en-US	Browsing speed
+AVERAGE_SPEED_MIN	en-US	Slow
+AVERAGE_SPEED_MAX	en-US	Fast
+
+FLIP_STYLE	en-US	Flip style
+Curl	en-US	Curl
+Roll	en-US	Roll
+
+FLIP_VARIATION	en-US	Flip variation
+FLIP_VARIATION_MIN	en-US	None
+FLIP_VARIATION_MAX	en-US	Max

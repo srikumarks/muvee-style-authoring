@@ -1,0 +1,242 @@
+﻿STYLENAME	de-DE	Einklebebuch
+STYLENAME	en-US	Scrapbook
+STYLENAME	es-ES	Álbum de recortes
+STYLENAME	fr-FR	Album
+STYLENAME	it-IT	Album
+STYLENAME	ja-JP	スクラップブック
+STYLENAME	ko-KR	스크랩북
+STYLENAME	nl-NL	Plakboek
+STYLENAME	pt-BR	Álbum de recortes
+STYLENAME	pt-PT	Álbum
+STYLENAME	ru-RU	Альбом
+STYLENAME	sv-SE	Klippbok
+STYLENAME	zh-CN	剪贴簿
+STYLENAME	zh-TW	剪貼簿
+STYLEDESC	de-DE	Wählen Sie einen Hintergrund und erzählen Sie Ihre Geschichte.
+STYLEDESC	en-US	Choose a background, tell your story.
+STYLEDESC	es-ES	Escoja un fondo y cuente su historia.
+STYLEDESC	fr-FR	Choisissez un fond, racontez votre histoire.
+STYLEDESC	it-IT	Scegli uno sfondo, racconta la tua storia.
+STYLEDESC	ja-JP	バックグランドを選択したら、あなたの物語が始まります。
+STYLEDESC	ko-KR	배경을 선택하고 귀하의 스토리를 말하십시오.
+STYLEDESC	nl-NL	Kies een achtergrondafbeelding en vertel uw verhaal.
+STYLEDESC	pt-BR	Escolha um plano de fundo para contar a sua história.
+STYLEDESC	pt-PT	Escolha uma imagem de fundo, conte uma história.
+STYLEDESC	ru-RU	Выберите фоновое изображение, расскажите свою историю.
+STYLEDESC	sv-SE	Välj en bakgrund och berätta din historia.
+STYLEDESC	zh-CN	选择背景，讲述你自己的故事。
+STYLEDESC	zh-TW	選擇最佳背景，述說精采故事。
+
+THEME	de-DE	Hintergrund
+THEME	en-US	Background
+THEME	es-ES	Fondo
+THEME	fr-FR	Arrière-plan
+THEME	it-IT	Sfondo
+THEME	ja-JP	バックグラウンド
+THEME	ko-KR	배경
+THEME	nl-NL	Achtergrond
+THEME	pt-BR	Plano de fundo
+THEME	pt-PT	Fundo
+THEME	ru-RU	Фон
+THEME	sv-SE	Bakgrund
+THEME	zh-CN	背景
+THEME	zh-TW	背景
+Lifestory	de-DE	Journal
+Lifestory	en-US	Life Story
+Lifestory	es-ES	Diario
+Lifestory	fr-FR	Journal
+Lifestory	it-IT	Diario
+Lifestory	ja-JP	日記
+Lifestory	ko-KR	저널
+Lifestory	nl-NL	Dagboek
+Lifestory	pt-BR	Diário
+Lifestory	pt-PT	Diário
+Lifestory	ru-RU	Журнал
+Lifestory	sv-SE	Dokumentär
+Lifestory	zh-CN	日记
+Lifestory	zh-TW	日誌
+Grunge	de-DE	Grunge
+Grunge	en-US	Grunge
+Grunge	es-ES	Grunge
+Grunge	fr-FR	Grunge
+Grunge	it-IT	Grunge
+Grunge	ja-JP	グランジ
+Grunge	ko-KR	조악한
+Grunge	nl-NL	Grunge
+Grunge	pt-BR	Grunge
+Grunge	pt-PT	Grunge
+Grunge	ru-RU	Гранж
+Grunge	sv-SE	Grunge
+Grunge	zh-CN	垃圾摇滚
+Grunge	zh-TW	垃圾搖滾
+Damask	de-DE	Viktorianisch
+Damask	en-US	Victorian
+Damask	es-ES	Victoriano
+Damask	fr-FR	Victorien
+Damask	it-IT	Vittoriano
+Damask	ja-JP	ビクトリア朝
+Damask	ko-KR	빅토리아조 풍의
+Damask	nl-NL	Victoriaans
+Damask	pt-BR	Vitoriano
+Damask	pt-PT	Vitoriano
+Damask	ru-RU	Консервативный
+Damask	sv-SE	Viktoriansk
+Damask	zh-CN	维多利亚
+Damask	zh-TW	維多利亞時期
+Floral	de-DE	Floral
+Floral	en-US	Floral
+Floral	es-ES	Floral
+Floral	fr-FR	Floral
+Floral	it-IT	Floreale
+Floral	ja-JP	花模様
+Floral	ko-KR	꽃 무늬의
+Floral	nl-NL	Bloemrijk
+Floral	pt-BR	Floral
+Floral	pt-PT	Floral
+Floral	ru-RU	Цветочный
+Floral	sv-SE	Blomster
+Floral	zh-CN	花卉
+Floral	zh-TW	花卉
+Abstract	de-DE	Abstrakt
+Abstract	en-US	Abstract
+Abstract	es-ES	Abstracto
+Abstract	fr-FR	Abstrait
+Abstract	it-IT	Astratto
+Abstract	ja-JP	アブストラクト
+Abstract	ko-KR	추상적인
+Abstract	nl-NL	Abstract
+Abstract	pt-BR	Abstrato
+Abstract	pt-PT	Abstracto
+Abstract	ru-RU	Абстрактный
+Abstract	sv-SE	Abstrakt
+Abstract	zh-CN	摘要
+Abstract	zh-TW	抽象
+
+AVERAGE_SPEED	de-DE	Blättergeschwindigkeit
+AVERAGE_SPEED	en-US	Browsing speed
+AVERAGE_SPEED	es-ES	Velocidad para pasar páginas
+AVERAGE_SPEED	fr-FR	Vitesse de lecture
+AVERAGE_SPEED	it-IT	Velocità di navigazione
+AVERAGE_SPEED	ja-JP	閲覧速度
+AVERAGE_SPEED	ko-KR	탐색 속도
+AVERAGE_SPEED	nl-NL	Bladersnelheid
+AVERAGE_SPEED	pt-BR	Velocidade de navegação
+AVERAGE_SPEED	pt-PT	Velocidade de navegação
+AVERAGE_SPEED	ru-RU	Скорость просмотра
+AVERAGE_SPEED	sv-SE	Blädderhastighet
+AVERAGE_SPEED	zh-CN	浏览速度
+AVERAGE_SPEED	zh-TW	瀏覽速度
+AVERAGE_SPEED_MIN	de-DE	Langsam
+AVERAGE_SPEED_MIN	en-US	Slow
+AVERAGE_SPEED_MIN	es-ES	Lenta
+AVERAGE_SPEED_MIN	fr-FR	Lente
+AVERAGE_SPEED_MIN	it-IT	Bassa
+AVERAGE_SPEED_MIN	ja-JP	遅い
+AVERAGE_SPEED_MIN	ko-KR	느림
+AVERAGE_SPEED_MIN	nl-NL	Langzaam
+AVERAGE_SPEED_MIN	pt-BR	Lenta
+AVERAGE_SPEED_MIN	pt-PT	Lenta
+AVERAGE_SPEED_MIN	ru-RU	Низкая
+AVERAGE_SPEED_MIN	sv-SE	Långsam
+AVERAGE_SPEED_MIN	zh-CN	慢
+AVERAGE_SPEED_MIN	zh-TW	緩慢
+AVERAGE_SPEED_MAX	de-DE	Schnell
+AVERAGE_SPEED_MAX	en-US	Fast
+AVERAGE_SPEED_MAX	es-ES	Rápida
+AVERAGE_SPEED_MAX	fr-FR	Rapide
+AVERAGE_SPEED_MAX	it-IT	Alta
+AVERAGE_SPEED_MAX	ja-JP	速い
+AVERAGE_SPEED_MAX	ko-KR	빠름
+AVERAGE_SPEED_MAX	nl-NL	Snel
+AVERAGE_SPEED_MAX	pt-BR	Rápida
+AVERAGE_SPEED_MAX	pt-PT	Rápida
+AVERAGE_SPEED_MAX	ru-RU	Высокая
+AVERAGE_SPEED_MAX	sv-SE	Snabb
+AVERAGE_SPEED_MAX	zh-CN	快
+AVERAGE_SPEED_MAX	zh-TW	快速
+
+FLIP_STYLE	de-DE	Blätterstil
+FLIP_STYLE	en-US	Flip style
+FLIP_STYLE	es-ES	Estilo de transición
+FLIP_STYLE	fr-FR	Style de transition
+FLIP_STYLE	it-IT	Stile capovolgimento
+FLIP_STYLE	ja-JP	フリップのスタイル
+FLIP_STYLE	ko-KR	넘기는 스타일
+FLIP_STYLE	nl-NL	Bladerstijl
+FLIP_STYLE	pt-BR	Estilo da inversão
+FLIP_STYLE	pt-PT	Estilo de inversão
+FLIP_STYLE	ru-RU	Изменяющийся стиль
+FLIP_STYLE	sv-SE	Blädderstil
+FLIP_STYLE	zh-CN	翻动风格
+FLIP_STYLE	zh-TW	翻轉樣式
+Curl	de-DE	Kräuseln
+Curl	en-US	Curl
+Curl	es-ES	Espiral
+Curl	fr-FR	Boucle
+Curl	it-IT	Spirale
+Curl	ja-JP	カール
+Curl	ko-KR	말아 올림
+Curl	nl-NL	Omkrullen
+Curl	pt-BR	Caracol
+Curl	pt-PT	Espiral
+Curl	ru-RU	По спирали
+Curl	sv-SE	Locka
+Curl	zh-CN	卷曲
+Curl	zh-TW	螺旋
+Roll	de-DE	Rollen
+Roll	en-US	Roll
+Roll	es-ES	Balanceo
+Roll	fr-FR	Rouleau
+Roll	it-IT	Rotazione
+Roll	ja-JP	ロール
+Roll	ko-KR	회전
+Roll	nl-NL	Rollen
+Roll	pt-BR	Rolo
+Roll	pt-PT	Enrolar
+Roll	ru-RU	По кругу
+Roll	sv-SE	Rulla
+Roll	zh-CN	滚动
+Roll	zh-TW	滾動
+
+FLIP_VARIATION	de-DE	Blättervariationen
+FLIP_VARIATION	en-US	Flip variation
+FLIP_VARIATION	es-ES	Variante de transición
+FLIP_VARIATION	fr-FR	Variation de la transition
+FLIP_VARIATION	it-IT	Variazione del capovolgimento
+FLIP_VARIATION	ja-JP	フリップのバリエーション
+FLIP_VARIATION	ko-KR	넘기기 변경
+FLIP_VARIATION	nl-NL	Variatie bij bladeren
+FLIP_VARIATION	pt-BR	Variação de inversão
+FLIP_VARIATION	pt-PT	Variação da inversão
+FLIP_VARIATION	ru-RU	Вариация изменений
+FLIP_VARIATION	sv-SE	Bläddervariation
+FLIP_VARIATION	zh-CN	翻动变化
+FLIP_VARIATION	zh-TW	翻轉變化
+FLIP_VARIATION_MIN	de-DE	Keine
+FLIP_VARIATION_MIN	en-US	None
+FLIP_VARIATION_MIN	es-ES	Ninguna
+FLIP_VARIATION_MIN	fr-FR	Aucune
+FLIP_VARIATION_MIN	it-IT	Nessuna
+FLIP_VARIATION_MIN	ja-JP	なし
+FLIP_VARIATION_MIN	ko-KR	없음
+FLIP_VARIATION_MIN	nl-NL	Geen
+FLIP_VARIATION_MIN	pt-BR	Nenhum
+FLIP_VARIATION_MIN	pt-PT	Nenhuma
+FLIP_VARIATION_MIN	ru-RU	Нет
+FLIP_VARIATION_MIN	sv-SE	Ingen
+FLIP_VARIATION_MIN	zh-CN	无
+FLIP_VARIATION_MIN	zh-TW	無
+FLIP_VARIATION_MAX	de-DE	Max.
+FLIP_VARIATION_MAX	en-US	Max
+FLIP_VARIATION_MAX	es-ES	Máx.
+FLIP_VARIATION_MAX	fr-FR	Max
+FLIP_VARIATION_MAX	it-IT	Massima
+FLIP_VARIATION_MAX	ja-JP	最大
+FLIP_VARIATION_MAX	ko-KR	최대
+FLIP_VARIATION_MAX	nl-NL	Maximum
+FLIP_VARIATION_MAX	pt-BR	Máx.
+FLIP_VARIATION_MAX	pt-PT	Máxima
+FLIP_VARIATION_MAX	ru-RU	Максимальная
+FLIP_VARIATION_MAX	sv-SE	Max
+FLIP_VARIATION_MAX	zh-CN	最大值
+FLIP_VARIATION_MAX	zh-TW	最大

@@ -1,0 +1,214 @@
+﻿STYLENAME	de-DE	Lebensgeschichte
+STYLENAME	en-US	Life Story
+STYLENAME	es-ES	Historia de la vida
+STYLENAME	fr-FR	Histoire de la vie
+STYLENAME	it-IT	Biografia
+STYLENAME	ja-JP	ライフストーリー
+STYLENAME	ko-KR	라이프 스토리
+STYLENAME	nl-NL	Levensverhaal
+STYLENAME	pt-BR	Biografia
+STYLENAME	pt-PT	História da vida
+STYLENAME	ru-RU	Жизнеописание
+STYLENAME	sv-SE	Livshistoria
+STYLENAME	zh-CN	生活故事
+STYLENAME	zh-TW	生涯故事
+STYLEDESC	de-DE	Wenn die Sommer ewig dauern und Träume die Wirklichkeit inspirieren könnten.
+STYLEDESC	en-US	When summers lasted forever and dreams inspired reality.
+STYLEDESC	es-ES	Cuando los veranos nunca acababan y los sueños inspiraban realidad.
+STYLEDESC	fr-FR	Lorsque les étés duraient pour toujours et que les rêves inspiraient la réalité.
+STYLEDESC	it-IT	Quando le estati duravano per sempre e i sogni ispiravano la realtà.
+STYLEDESC	ja-JP	夏が永遠に続く時、夢が現実に元気を与えます。
+STYLEDESC	ko-KR	여름은 영원히 계속되고 꿈은 현실로 이루어집니다.
+STYLEDESC	nl-NL	Toen de zomers nog eindeloos duurden en dromen de werkelijkheid inspireerden.
+STYLEDESC	pt-BR	Quando os verões duravam para sempre e os sonhos inspiravam a realidade.
+STYLEDESC	pt-PT	Quando os Verões duravam para sempre e os sonhos inspiravam a realidade.
+STYLEDESC	ru-RU	Когда лето не заканчивается, а мечты становятся реальностью.
+STYLEDESC	sv-SE	När sommaren varade för evigt och drömmen blev verklighet.
+STYLEDESC	zh-CN	夏日持续到永远，梦想演变成现实。
+STYLEDESC	zh-TW	在永恆的盛夏與追逐夢想之時。
+
+AVERAGE_SPEED	de-DE	Tempo
+AVERAGE_SPEED	en-US	Pace
+AVERAGE_SPEED	es-ES	Ritmo
+AVERAGE_SPEED	fr-FR	Rythme
+AVERAGE_SPEED	it-IT	Ritmo
+AVERAGE_SPEED	ja-JP	ペース
+AVERAGE_SPEED	ko-KR	페이스
+AVERAGE_SPEED	nl-NL	Snelheid
+AVERAGE_SPEED	pt-BR	Ritmo
+AVERAGE_SPEED	pt-PT	Ritmo
+AVERAGE_SPEED	ru-RU	Скорость
+AVERAGE_SPEED	sv-SE	Hastighet
+AVERAGE_SPEED	zh-CN	速度
+AVERAGE_SPEED	zh-TW	速度
+AVERAGE_SPEED_MIN	de-DE	Langsam
+AVERAGE_SPEED_MIN	en-US	Slow
+AVERAGE_SPEED_MIN	es-ES	Lento
+AVERAGE_SPEED_MIN	fr-FR	Lent
+AVERAGE_SPEED_MIN	it-IT	Lento
+AVERAGE_SPEED_MIN	ja-JP	遅い
+AVERAGE_SPEED_MIN	ko-KR	느림
+AVERAGE_SPEED_MIN	nl-NL	Langzaam
+AVERAGE_SPEED_MIN	pt-BR	Lenta
+AVERAGE_SPEED_MIN	pt-PT	Lento
+AVERAGE_SPEED_MIN	ru-RU	Низкая
+AVERAGE_SPEED_MIN	sv-SE	Långsam
+AVERAGE_SPEED_MIN	zh-CN	慢
+AVERAGE_SPEED_MIN	zh-TW	緩慢
+AVERAGE_SPEED_MAX	de-DE	Schnell
+AVERAGE_SPEED_MAX	en-US	Fast
+AVERAGE_SPEED_MAX	es-ES	Rápido
+AVERAGE_SPEED_MAX	fr-FR	Rapide
+AVERAGE_SPEED_MAX	it-IT	Veloce
+AVERAGE_SPEED_MAX	ja-JP	速い
+AVERAGE_SPEED_MAX	ko-KR	빠름
+AVERAGE_SPEED_MAX	nl-NL	Snel
+AVERAGE_SPEED_MAX	pt-BR	Rápida
+AVERAGE_SPEED_MAX	pt-PT	Rápido
+AVERAGE_SPEED_MAX	ru-RU	Высокая
+AVERAGE_SPEED_MAX	sv-SE	Snabb
+AVERAGE_SPEED_MAX	zh-CN	快
+AVERAGE_SPEED_MAX	zh-TW	快速
+
+VARIATION	de-DE	Winkelvariationen
+VARIATION	en-US	Angle variation
+VARIATION	es-ES	Variante de ángulo
+VARIATION	fr-FR	Changement d'angle
+VARIATION	it-IT	Variazione dell'angolo
+VARIATION	ja-JP	角度の変化
+VARIATION	ko-KR	변화 각도 변경
+VARIATION	nl-NL	Hoekvariaties
+VARIATION	pt-BR	Variação de ângulo
+VARIATION	pt-PT	Ângulos
+VARIATION	ru-RU	Изменение угла
+VARIATION	sv-SE	Varierande vinkel
+VARIATION	zh-CN	角度变换
+VARIATION	zh-TW	角度變化
+VARIATION_MIN	de-DE	Keine
+VARIATION_MIN	en-US	None
+VARIATION_MIN	es-ES	Ninguno
+VARIATION_MIN	fr-FR	Aucune
+VARIATION_MIN	it-IT	Nessuna
+VARIATION_MIN	ja-JP	なし
+VARIATION_MIN	ko-KR	없음
+VARIATION_MIN	nl-NL	Niet
+VARIATION_MIN	pt-BR	Nenhuma
+VARIATION_MIN	pt-PT	Nenhum
+VARIATION_MIN	ru-RU	Нет
+VARIATION_MIN	sv-SE	Ingen
+VARIATION_MIN	zh-CN	无
+VARIATION_MIN	zh-TW	無
+VARIATION_MAX	de-DE	Viele
+VARIATION_MAX	en-US	Lots
+VARIATION_MAX	es-ES	Muchos
+VARIATION_MAX	fr-FR	Nombreuses
+VARIATION_MAX	it-IT	Alta
+VARIATION_MAX	ja-JP	多い
+VARIATION_MAX	ko-KR	많음
+VARIATION_MAX	nl-NL	Sterk
+VARIATION_MAX	pt-BR	Várias
+VARIATION_MAX	pt-PT	Muitos
+VARIATION_MAX	ru-RU	Очень много
+VARIATION_MAX	sv-SE	Massor
+VARIATION_MAX	zh-CN	许多
+VARIATION_MAX	zh-TW	許多
+
+BRIGHTNESS	de-DE	Hintergrund
+BRIGHTNESS	en-US	Background
+BRIGHTNESS	es-ES	Fondo
+BRIGHTNESS	fr-FR	Arrière-plan
+BRIGHTNESS	it-IT	Sfondo
+BRIGHTNESS	ja-JP	バックグラウンド
+BRIGHTNESS	ko-KR	배경
+BRIGHTNESS	nl-NL	Achtergrond
+BRIGHTNESS	pt-BR	Plano de fundo
+BRIGHTNESS	pt-PT	Fundo
+BRIGHTNESS	ru-RU	Фон
+BRIGHTNESS	sv-SE	Bakgrund
+BRIGHTNESS	zh-CN	背景
+BRIGHTNESS	zh-TW	背景
+BRIGHTNESS_MIN	de-DE	Dunkler
+BRIGHTNESS_MIN	en-US	Darker
+BRIGHTNESS_MIN	es-ES	Más oscuro
+BRIGHTNESS_MIN	fr-FR	Plus sombre
+BRIGHTNESS_MIN	it-IT	Più scuro
+BRIGHTNESS_MIN	ja-JP	暗い
+BRIGHTNESS_MIN	ko-KR	어둡게
+BRIGHTNESS_MIN	nl-NL	Donker
+BRIGHTNESS_MIN	pt-BR	Mais escuro
+BRIGHTNESS_MIN	pt-PT	Mais escuro
+BRIGHTNESS_MIN	ru-RU	Темнее
+BRIGHTNESS_MIN	sv-SE	Mörkare
+BRIGHTNESS_MIN	zh-CN	较暗
+BRIGHTNESS_MIN	zh-TW	較深
+BRIGHTNESS_MAX	de-DE	Heller
+BRIGHTNESS_MAX	en-US	Brighter
+BRIGHTNESS_MAX	es-ES	Más claro
+BRIGHTNESS_MAX	fr-FR	Plus clair
+BRIGHTNESS_MAX	it-IT	Più chiaro
+BRIGHTNESS_MAX	ja-JP	明るい
+BRIGHTNESS_MAX	ko-KR	밝게
+BRIGHTNESS_MAX	nl-NL	Licht
+BRIGHTNESS_MAX	pt-BR	Mais claro
+BRIGHTNESS_MAX	pt-PT	Mais claro
+BRIGHTNESS_MAX	ru-RU	Светлее
+BRIGHTNESS_MAX	sv-SE	Ljusare
+BRIGHTNESS_MAX	zh-CN	较亮
+BRIGHTNESS_MAX	zh-TW	較淺
+
+COLOR_START	de-DE	muvee beginnen in...
+COLOR_START	en-US	Begin muvee in...
+COLOR_START	es-ES	Iniciar muvee en…
+COLOR_START	fr-FR	Commencer un clip muvee dans
+COLOR_START	it-IT	Avvia muvee in...
+COLOR_START	ja-JP	muvee の開始時...
+COLOR_START	ko-KR	muvee로 시작하고...
+COLOR_START	nl-NL	muvee beginnen in...
+COLOR_START	pt-BR	Iniciar muvee em...
+COLOR_START	pt-PT	Iniciar muvee em...
+COLOR_START	ru-RU	Начать фильм muvee в...
+COLOR_START	sv-SE	Starta muvee i...
+COLOR_START	zh-CN	一切自 muvee 始...
+COLOR_START	zh-TW	以 muvee 開始...
+COLOR_END	de-DE	muvee beenden in...
+COLOR_END	en-US	End muvee in...
+COLOR_END	es-ES	Finalizar muvee en…
+COLOR_END	fr-FR	Terminer un clip muvee dans
+COLOR_END	it-IT	Esci da muvee in...
+COLOR_END	ja-JP	muvee の終了時...
+COLOR_END	ko-KR	muvee로 끝을 맺으십시오...
+COLOR_END	nl-NL	muvee eindigen in...
+COLOR_END	pt-BR	Encerrar muvee em...
+COLOR_END	pt-PT	Terminar muvee em...
+COLOR_END	ru-RU	Закончить фильм muvee в...
+COLOR_END	sv-SE	Avsluta muvee i...
+COLOR_END	zh-CN	自 muvee 终...
+COLOR_END	zh-TW	藉 muvee 完成...
+BW	de-DE	Schwarzweiß
+BW	en-US	Black & white
+BW	es-ES	Blanco y negro
+BW	fr-FR	Noir et blanc
+BW	it-IT	Bianco e nero
+BW	ja-JP	白黒
+BW	ko-KR	흑백
+BW	nl-NL	Zwart-wit
+BW	pt-BR	Preto-e-branco
+BW	pt-PT	Preto-e-branco
+BW	ru-RU	Черно-белый
+BW	sv-SE	Svartvit
+BW	zh-CN	黑白
+BW	zh-TW	黑白
+Color	de-DE	Vollfarbe
+Color	en-US	Color
+Color	es-ES	Color
+Color	fr-FR	Couleurs totales
+Color	it-IT	A colori
+Color	ja-JP	フルカラー
+Color	ko-KR	전체 색상
+Color	nl-NL	Kleur
+Color	pt-BR	Quatro cores
+Color	pt-PT	Quatro cores
+Color	ru-RU	Цветной
+Color	sv-SE	Färg
+Color	zh-CN	彩色
+Color	zh-TW	全彩

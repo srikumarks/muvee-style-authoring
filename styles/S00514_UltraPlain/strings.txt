@@ -1,0 +1,71 @@
+﻿STYLENAME	de-DE	Ultrarein
+STYLENAME	en-US	Ultra Plain
+STYLENAME	es-ES	Máxima sencillez
+STYLENAME	fr-FR	Ultra simple
+STYLENAME	it-IT	Semplicissimo
+STYLENAME	ja-JP	ウルトラシンプル
+STYLENAME	ko-KR	매우 평범함
+STYLENAME	nl-NL	Uiterst eenvoudig
+STYLENAME	pt-BR	Ultraplano
+STYLENAME	pt-PT	Ultrasimples
+STYLENAME	ru-RU	Самый обычный
+STYLENAME	sv-SE	Ultraenkel
+STYLENAME	zh-CN	纯平
+STYLENAME	zh-TW	極簡
+STYLEDESC	de-DE	Konzentrieren Sie sich auf Ihre Fotos und Videos – und auf nichts anderes.
+STYLEDESC	en-US	Concentrate on your photos and video - nothing else.
+STYLEDESC	es-ES	Céntrese en las fotos y los vídeos, en nada más.
+STYLEDESC	fr-FR	Concentrez-vous sur vos photos et vidéos, et sur rien d'autre
+STYLEDESC	it-IT	È sufficiente concentrarsi su foto e video, nient'altro.
+STYLEDESC	ja-JP	演出を抑えた写真やビデオそのものを楽しむスタイル。
+STYLEDESC	ko-KR	사진 및 비디오에만 집중
+STYLEDESC	nl-NL	Stel uw foto’s en video centraal. Vergeet al het andere.
+STYLEDESC	pt-BR	Concentre-se em suas fotos e vídeos – nada mais.
+STYLEDESC	pt-PT	Concentre-se nas suas fotos e vídeos - nada mais.
+STYLEDESC	ru-RU	Концентрируйтесь на фотографиях и видео и не на чем другом.
+STYLEDESC	sv-SE	Koncentrera dig på dina foton och videor – inget annat.
+STYLEDESC	zh-CN	只需关注您的照片和视频，无需考虑其他。
+STYLEDESC	zh-TW	把焦點完全放在您的相片和視訊上。
+
+TRANSITIONS	de-DE	Übergänge
+TRANSITIONS	en-US	Transitions
+TRANSITIONS	es-ES	Transiciones
+TRANSITIONS	fr-FR	Transitions
+TRANSITIONS	it-IT	Transizioni
+TRANSITIONS	ja-JP	トランジション
+TRANSITIONS	ko-KR	전환
+TRANSITIONS	nl-NL	Overgangen
+TRANSITIONS	pt-BR	Transições
+TRANSITIONS	pt-PT	Transições
+TRANSITIONS	ru-RU	Преобразования
+TRANSITIONS	sv-SE	Övergångar
+TRANSITIONS	zh-CN	过渡
+TRANSITIONS	zh-TW	轉換
+Cuts	de-DE	Schnitte
+Cuts	en-US	Cuts
+Cuts	es-ES	Cortes
+Cuts	fr-FR	Coupures
+Cuts	it-IT	Taglia
+Cuts	ja-JP	カット
+Cuts	ko-KR	잘라내기
+Cuts	nl-NL	Knippen
+Cuts	pt-BR	Cortes
+Cuts	pt-PT	Cortes
+Cuts	ru-RU	Вырезки
+Cuts	sv-SE	Klipp
+Cuts	zh-CN	剪切
+Cuts	zh-TW	剪接
+Dissolves	de-DE	Überblendungen
+Dissolves	en-US	Dissolves
+Dissolves	es-ES	Fundidos
+Dissolves	fr-FR	Fondus enchaînés
+Dissolves	it-IT	Dissolvenza
+Dissolves	ja-JP	ディゾルブ
+Dissolves	ko-KR	오버랩
+Dissolves	nl-NL	Overvloeien
+Dissolves	pt-BR	Dissoluções
+Dissolves	pt-PT	Dispersões
+Dissolves	ru-RU	Переходы
+Dissolves	sv-SE	Upplösning
+Dissolves	zh-CN	溶解
+Dissolves	zh-TW	溶解

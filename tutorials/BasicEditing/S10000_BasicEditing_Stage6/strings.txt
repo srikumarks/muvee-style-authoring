@@ -1,0 +1,3 @@
+﻿STYLEDESC	en-US	STAGE 6: Making transition durations respond to music.
+STYLENAME	en-US	Basic editing tutorial (6 of 8)
+

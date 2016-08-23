@@ -1,0 +1,20 @@
+STYLENAME	en-US	Aurora [code only]
+STYLEDESC	en-US	Let your video dance to beautiful color spectrums.
+AVERAGE_SPEED	en-US	Pace
+AVERAGE_SPEED_MIN	en-US	Slow
+AVERAGE_SPEED_MAX	en-US	Fast
+DIRECTION	en-US	Zoom direction
+Forward	en-US	Forward
+Reverse	en-US	Reverse
+VARIATION	en-US	Angle variation
+VARIATION_MIN	en-US	None
+VARIATION_MAX	en-US	Lots
+TRANSPARENCY	en-US	Border
+TRANSPARENCY_MIN	en-US	Transparent
+TRANSPARENCY_MAX	en-US	Opaque
+THEME	en-US	Background theme
+Rays	en-US	Ethereal rays
+Crayons	en-US	Crayons
+Skies	en-US	Blue skies
+Stage	en-US	Center stage
+None	en-US	Black

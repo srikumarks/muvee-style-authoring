@@ -1,0 +1,3 @@
+﻿STYLEDESC	en-US	STAGE 7: Adding a MUSIC_RESPONSE control.
+STYLENAME	en-US	Basic editing tutorial (7 of 8)
+

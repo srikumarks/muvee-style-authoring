@@ -1,0 +1,7 @@
+﻿STYLENAME	en-US	Independence Day
+STYLEDESC	en-US	Picnics, BBQs, mustard and celebration.
+
+AVERAGE_SPEED	en-US	Pace
+BORDERCOLOR	en-US	Color of Border
+AVERAGE_SPEED_MIN	en-US	Slow
+AVERAGE_SPEED_MAX	en-US	Fast

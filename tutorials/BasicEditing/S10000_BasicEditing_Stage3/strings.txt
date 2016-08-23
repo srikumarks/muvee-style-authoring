@@ -1,0 +1,3 @@
+﻿STYLEDESC	en-US	STAGE 3: Better PACE control.
+STYLENAME	en-US	Basic editing tutorial (3 of 8)
+

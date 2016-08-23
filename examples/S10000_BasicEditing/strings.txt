@@ -1,0 +1,9 @@
+﻿STYLEDESC	en-US	Demonstrates editing controls in a style.
+STYLENAME	en-US	Basic editing 
+PACE	en-US	Pace
+PACE_MIN	en-US	Slow
+PACE_MAX	en-US	Fast
+MUSIC_RESPONSE	en-US	Music response
+MUSIC_RESPONSE_MIN	en-US	Inverse
+MUSIC_RESPONSE_MAX	en-US	Normal
+

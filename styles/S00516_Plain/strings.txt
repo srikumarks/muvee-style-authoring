@@ -1,0 +1,157 @@
+﻿STYLENAME	de-DE	Klassisch schlicht
+STYLENAME	en-US	Classic Vanilla
+STYLENAME	es-ES	Vainilla clásico
+STYLENAME	fr-FR	Vanille classique
+STYLENAME	it-IT	Vaniglia
+STYLENAME	ja-JP	クラシックバニラ
+STYLENAME	ko-KR	클래식 바닐라
+STYLENAME	nl-NL	Tijdloos vanille
+STYLENAME	pt-BR	Creme clássico
+STYLENAME	pt-PT	Baunilha clássico
+STYLENAME	ru-RU	Классический бесцветный
+STYLENAME	sv-SE	Klassisk vanilj
+STYLENAME	zh-CN	优雅的香草
+STYLENAME	zh-TW	古典香草
+STYLEDESC	de-DE	Kein Firlefanz. Einfach nur elegant.
+STYLEDESC	en-US	No extra toppings. Simply elegant.
+STYLEDESC	es-ES	Sin capas adicionales. Sencillamente elegante.
+STYLEDESC	fr-FR	Sans fioriture. L'élégance en toute simplicité.
+STYLEDESC	it-IT	Niente di superfluo. Semplicemente elegante.
+STYLEDESC	ja-JP	余計な演出は要りません。  シンプルで優雅なスタイル。
+STYLEDESC	ko-KR	추가 토핑이 없습니다. 간단하면서 훌륭합니다.
+STYLEDESC	nl-NL	Zonder opsmuk. Gewoonweg elegant.
+STYLEDESC	pt-BR	Sem revestimento extra. Simplesmente elegante.
+STYLEDESC	pt-PT	Sem adornos. Simplesmente elegante.
+STYLEDESC	ru-RU	Никаких излишеств. Просто изыскано.
+STYLEDESC	sv-SE	Inga extra tillbehör. Bara elegant.
+STYLEDESC	zh-CN	没有枝节，只有优雅。
+STYLEDESC	zh-TW	沒有多餘的點綴，素雅大方。
+
+AVERAGE_SPEED	de-DE	Tempo
+AVERAGE_SPEED	en-US	Pace
+AVERAGE_SPEED	es-ES	Ritmo
+AVERAGE_SPEED	fr-FR	Rythme
+AVERAGE_SPEED	it-IT	Ritmo
+AVERAGE_SPEED	ja-JP	ペース
+AVERAGE_SPEED	ko-KR	페이스
+AVERAGE_SPEED	nl-NL	Snelheid
+AVERAGE_SPEED	pt-BR	Ritmo
+AVERAGE_SPEED	pt-PT	Ritmo
+AVERAGE_SPEED	ru-RU	Скорость
+AVERAGE_SPEED	sv-SE	Hastighet
+AVERAGE_SPEED	zh-CN	速度
+AVERAGE_SPEED	zh-TW	速度
+AVERAGE_SPEED_MIN	de-DE	Langsam
+AVERAGE_SPEED_MIN	en-US	Slow
+AVERAGE_SPEED_MIN	es-ES	Lento
+AVERAGE_SPEED_MIN	fr-FR	Lent
+AVERAGE_SPEED_MIN	it-IT	Lento
+AVERAGE_SPEED_MIN	ja-JP	遅い
+AVERAGE_SPEED_MIN	ko-KR	느림
+AVERAGE_SPEED_MIN	nl-NL	Langzaam
+AVERAGE_SPEED_MIN	pt-BR	Lenta
+AVERAGE_SPEED_MIN	pt-PT	Lento
+AVERAGE_SPEED_MIN	ru-RU	Низкая
+AVERAGE_SPEED_MIN	sv-SE	Långsam
+AVERAGE_SPEED_MIN	zh-CN	慢
+AVERAGE_SPEED_MIN	zh-TW	緩慢
+AVERAGE_SPEED_MAX	de-DE	Schnell
+AVERAGE_SPEED_MAX	en-US	Fast
+AVERAGE_SPEED_MAX	es-ES	Rápido
+AVERAGE_SPEED_MAX	fr-FR	Rapide
+AVERAGE_SPEED_MAX	it-IT	Veloce
+AVERAGE_SPEED_MAX	ja-JP	速い
+AVERAGE_SPEED_MAX	ko-KR	빠름
+AVERAGE_SPEED_MAX	nl-NL	Snel
+AVERAGE_SPEED_MAX	pt-BR	Rápida
+AVERAGE_SPEED_MAX	pt-PT	Rápido
+AVERAGE_SPEED_MAX	ru-RU	Высокая
+AVERAGE_SPEED_MAX	sv-SE	Snabb
+AVERAGE_SPEED_MAX	zh-CN	快
+AVERAGE_SPEED_MAX	zh-TW	快速
+
+MUSIC_RESPONSE	de-DE	Der Musik entsprechend
+MUSIC_RESPONSE	en-US	Response to music
+MUSIC_RESPONSE	es-ES	Respuesta a la música
+MUSIC_RESPONSE	fr-FR	Réponse à la musique
+MUSIC_RESPONSE	it-IT	Risposta alla musica
+MUSIC_RESPONSE	ja-JP	音楽とのマッチ
+MUSIC_RESPONSE	ko-KR	음악에 맞게
+MUSIC_RESPONSE	nl-NL	Reactie op muziek
+MUSIC_RESPONSE	pt-BR	Resposta para música
+MUSIC_RESPONSE	pt-PT	Resposta à música
+MUSIC_RESPONSE	ru-RU	Синхронизация с музыкой
+MUSIC_RESPONSE	sv-SE	Respons på musik
+MUSIC_RESPONSE	zh-CN	对音乐的响应
+MUSIC_RESPONSE	zh-TW	回應音樂
+MUSIC_RESPONSE_MIN	de-DE	Weniger
+MUSIC_RESPONSE_MIN	en-US	Less
+MUSIC_RESPONSE_MIN	es-ES	Menos
+MUSIC_RESPONSE_MIN	fr-FR	Moins
+MUSIC_RESPONSE_MIN	it-IT	Meno
+MUSIC_RESPONSE_MIN	ja-JP	少ない
+MUSIC_RESPONSE_MIN	ko-KR	적음
+MUSIC_RESPONSE_MIN	nl-NL	Minder
+MUSIC_RESPONSE_MIN	pt-BR	Menos
+MUSIC_RESPONSE_MIN	pt-PT	Menos
+MUSIC_RESPONSE_MIN	ru-RU	Меньше
+MUSIC_RESPONSE_MIN	sv-SE	Mindre
+MUSIC_RESPONSE_MIN	zh-CN	较少
+MUSIC_RESPONSE_MIN	zh-TW	較少
+MUSIC_RESPONSE_MAX	de-DE	Mehr
+MUSIC_RESPONSE_MAX	en-US	More
+MUSIC_RESPONSE_MAX	es-ES	Más
+MUSIC_RESPONSE_MAX	fr-FR	Plus
+MUSIC_RESPONSE_MAX	it-IT	Più
+MUSIC_RESPONSE_MAX	ja-JP	多い
+MUSIC_RESPONSE_MAX	ko-KR	많음
+MUSIC_RESPONSE_MAX	nl-NL	Meer
+MUSIC_RESPONSE_MAX	pt-BR	Mais
+MUSIC_RESPONSE_MAX	pt-PT	Mais
+MUSIC_RESPONSE_MAX	ru-RU	Больше
+MUSIC_RESPONSE_MAX	sv-SE	Fler
+MUSIC_RESPONSE_MAX	zh-CN	较多
+MUSIC_RESPONSE_MAX	zh-TW	較多
+
+DISSOLVES_ONLY	de-DE	Keine Farbübergänge, nur Überblendungen
+DISSOLVES_ONLY	en-US	Disable transition colors and use dissolves only
+DISSOLVES_ONLY	es-ES	Desactivar colores de transición y utilizar únicamente fundidos
+DISSOLVES_ONLY	fr-FR	Désactiver la transition des couleurs et utiliser des dissolvants uniquement
+DISSOLVES_ONLY	it-IT	Disabilita colori di transazione e usa solo le dissolvenze
+DISSOLVES_ONLY	ja-JP	色のトランジションを使用せずにディソルブ効果のみを使用する
+DISSOLVES_ONLY	ko-KR	전환 색상을 비활성화하고 오버랩만 사용
+DISSOLVES_ONLY	nl-NL	Geen overgangskleuren, alleen overvloeiend beeld
+DISSOLVES_ONLY	pt-BR	Desativar cores de transição e usar somente dissoluções
+DISSOLVES_ONLY	pt-PT	Desactivar cores de transição e utilizar apenas desvanecimento
+DISSOLVES_ONLY	ru-RU	Цвета перехода недоступны, используются только обычные переходы между сценами
+DISSOLVES_ONLY	sv-SE	Inaktivera övergångsfärger och använd endast upplösningar
+DISSOLVES_ONLY	zh-CN	禁止使用色彩过渡，仅使用画面
+DISSOLVES_ONLY	zh-TW	關閉轉變顏色功能，僅使用溶解模式
+FTC_LOUDNESS_LOW	de-DE	Farbübergang bei leisen Musikpassagen
+FTC_LOUDNESS_LOW	en-US	Transition color when music is soft
+FTC_LOUDNESS_LOW	es-ES	Color de transición cuando la música es suave
+FTC_LOUDNESS_LOW	fr-FR	Couleur de transition lorsque la musique est calme
+FTC_LOUDNESS_LOW	it-IT	Colore di transizione quando il volume della musica è basso
+FTC_LOUDNESS_LOW	ja-JP	ソフトな音楽の場合に使用するトランジション
+FTC_LOUDNESS_LOW	ko-KR	음악이 부드러울 때 전환 색상
+FTC_LOUDNESS_LOW	nl-NL	Overgangskleur bij zachte muziek
+FTC_LOUDNESS_LOW	pt-BR	Cor de transição quando a música for suave
+FTC_LOUDNESS_LOW	pt-PT	Cor de transição quando a música é suave
+FTC_LOUDNESS_LOW	ru-RU	Цвет перехода для спокойной музыки
+FTC_LOUDNESS_LOW	sv-SE	Övergångsfärg när musiken är svag
+FTC_LOUDNESS_LOW	zh-CN	音乐柔和时色彩过渡
+FTC_LOUDNESS_LOW	zh-TW	音樂和緩時，顏色隨之轉變
+FTC_LOUDNESS_HIGH	de-DE	Farbübergang bei lauten Musikpassagen
+FTC_LOUDNESS_HIGH	en-US	Transition color when music is loud
+FTC_LOUDNESS_HIGH	es-ES	Color de transición cuando la música es alta
+FTC_LOUDNESS_HIGH	fr-FR	Couleur de transition lorsque la musique est bruyante
+FTC_LOUDNESS_HIGH	it-IT	Colore di transizione quando il volume della musica è alto
+FTC_LOUDNESS_HIGH	ja-JP	ハードな音楽の場合に使用するトランジション
+FTC_LOUDNESS_HIGH	ko-KR	음악이 클 때 전환 색상
+FTC_LOUDNESS_HIGH	nl-NL	Overgangskleur bij harde muziek
+FTC_LOUDNESS_HIGH	pt-BR	Cor de transição quando a música for alta
+FTC_LOUDNESS_HIGH	pt-PT	Cor de transição quando a música é estridente
+FTC_LOUDNESS_HIGH	ru-RU	Цвет перехода для громкой музыки
+FTC_LOUDNESS_HIGH	sv-SE	Övergångsfärg när musiken är hög
+FTC_LOUDNESS_HIGH	zh-CN	音乐声音很大时色彩过渡
+FTC_LOUDNESS_HIGH	zh-TW	音樂聲轉強時，顏色也會隨之轉變

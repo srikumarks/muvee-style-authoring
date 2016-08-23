@@ -1,0 +1,14 @@
+STYLENAME	en-US	Smooth [code only]
+STYLEDESC	en-US	Redefine movement.
+AVERAGE_SPEED	en-US	Pace
+AVERAGE_SPEED_MIN	en-US	Slow
+AVERAGE_SPEED_MAX	en-US	Fast
+MUSIC_RESPONSE	en-US	Response to music
+MUSIC_RESPONSE_MIN	en-US	Less
+MUSIC_RESPONSE_MAX	en-US	More
+BACKGROUND	en-US	Background
+None	en-US	Black
+Color	en-US	Color gradient
+Input	en-US	My photos/video
+TOP_GRADIENT	en-US	Color gradient top
+BOTTOM_GRADIENT	en-US	Color gradient bottom

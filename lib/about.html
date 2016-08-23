@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <style>
+      body {
+        font-family: sans-serif;
+        font-size: small;
+      }
+      tt {
+        font-family: monospace;
+        font-size: 12;
+      }
+      .code {
+        font-family: monospace;
+        font-size: 12;
+        text-indent: 4em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+      }
+    </style>
+  </head>
+  <body>    
+    <h1>About the <a href="http://muvee-style-authoring.googlecode.com/svn/trunk/lib">lib</a> folder</h1>
+    <p>The <tt>lib</tt> folder contains code (usually in the form of modules) that can be shared among many styles. You can use the shared code in your styles in one of the following ways -</p>
+    <ol>
+      <li>
+	By copying the file into your own style and loading it using -
+	<div class="code">(load (resource "the-file.scm"))</div>
+      </li>
+      <li>
+	By directly loading it from the web using -
+	<div class="code">(load (fetch-uri "http://muvee-style-authoring.googlecode.com/svn/trunk/lib/the-file.scm"))</div>
+      </li>
+    </ol>
+    </p>
+    
+  </body>
+</html>

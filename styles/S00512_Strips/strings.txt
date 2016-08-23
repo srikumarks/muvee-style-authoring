@@ -1,0 +1,8 @@
+STYLENAME	en-US	Strips [code only]
+STYLEDESC	en-US	They slip, they slide, and re-form like magic.
+STRIPS	en-US	Number of strips
+STRIPS_MIN	en-US	Few
+STRIPS_MAX	en-US	Lots
+THEME	en-US	Background color
+Black	en-US	Black
+White	en-US	White
