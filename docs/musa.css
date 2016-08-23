@@ -1,0 +1,47 @@
+.main, .refcontent, .tocview, .tocsub, .inheritedlbl, i {
+  font-family: Arial, sans-serif;
+}
+
+body {
+  font-size: small;
+}
+
+table.boxed p {
+  font-size: small;
+}
+
+/* Monospace: */
+.RktIn, .RktRdr, .RktPn, .RktMeta,
+.RktMod, .RktKw, .RktVar, .RktSym,
+.RktRes, .RktOut, .RktCmt, .RktVal,
+.stt, .SCodeFlow {
+   font-family: Consolas, Inconsolata, Inconsolata-dz, monospace;
+   font-size: small;
+}
+
+.tocsub .stt {
+    font-size: small;
+}
+
+.maincolumn {
+    width: 60em;
+    margin-left: 18em;
+}
+
+.SCodeFlow {
+    width: 80em;
+}
+
+.tocsubseclink {
+    font-size: 70%;
+}
+
+.tocset {
+    width: 16em;
+}
+
+h3, h3 .RktSym { font-size: large }
+h4, h4 .RktSym { font-size: large }
+h5, h5 .RktSym { font-size: medium }
+h6, h6 .RktSym { font-size: small }
+
